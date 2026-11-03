@@ -5,9 +5,11 @@ export function Footer() {
   return (
     <footer className="site-footer">
       <span>{footer.copyright}</span>
-      <a href={footer.creditUrl} rel="noopener" target="_blank">
-        {footer.credit}
-      </a>
+      {footer.credit && (
+        <a href={footer.creditUrl} rel="noopener" target="_blank">
+          {footer.credit}
+        </a>
+      )}
     </footer>
   );
 }

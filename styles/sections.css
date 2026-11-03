@@ -303,7 +303,13 @@
 .about-stats li {
   padding: 8px 12px;
   border-left: 1px solid var(--accent);
-  background: rgb(26 31 38 / 72%);
+  /* Opaque: the particle backdrop sits behind these cards (text contrast measured ≥4.5:1). */
+  background: var(--panel);
+}
+.about-actions .btn-primary:not(:hover),
+.about-actions .btn-secondary:not(:hover) {
+  /* Solid fill over the particle backdrop so label contrast does not depend on particles. */
+  background-color: var(--bg);
 }
 .about-actions {
   display: flex;
@@ -323,7 +329,7 @@
   transition: opacity 600ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 .robot-backdrop[data-state='ready'] {
-  opacity: 0.55;
+  opacity: 0.4;
 }
 .robot-backdrop[data-state='off'] {
   display: none;

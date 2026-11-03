@@ -1,12 +1,20 @@
 'use client';
 
 import dynamic from 'next/dynamic';
-import { Component, type ReactNode, useEffect, useRef, useState } from 'react';
+import {
+  Component,
+  type ReactNode,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
 import { SITE } from '@/content/site';
 import { useEnhancedEffects } from '@/lib/useEnhancedEffects';
 
 // three/R3F stay out of the first-load bundle; fetched only when this mounts.
 const RobotScene = dynamic(() => import('./RobotScene'), { ssr: false });
+const ParticleMech = dynamic(() => import('./ParticleMech'), { ssr: false });
 
 function hasWebGL(): boolean {
   try {
@@ -35,12 +43,14 @@ class SceneBoundary extends Component<
 }
 
 /** Background 3D decoration for #about: mounts when near the viewport and effects are enabled. */
-export function RobotBackdrop({ src = SITE.robot.model }: { src?: string }) {
+export function RobotBackdrop() {
+  const glb = SITE.robot.mode === 'glb';
   const enabled = useEnhancedEffects();
   const ref = useRef<HTMLDivElement>(null);
   const [near, setNear] = useState(false);
   const [ready, setReady] = useState(false);
   const [failed, setFailed] = useState(false);
+  const onReady = useCallback(() => setReady(true), []);
 
   useEffect(() => {
     const el = ref.current;
@@ -75,7 +85,11 @@ export function RobotBackdrop({ src = SITE.robot.model }: { src?: string }) {
     >
       {enabled && near && !failed && (
         <SceneBoundary onError={() => setFailed(true)}>
-          <RobotScene src={src} onReady={() => setReady(true)} />
+          {glb ? (
+            <RobotScene src={SITE.robot.model} onReady={onReady} />
+          ) : (
+            <ParticleMech src={SITE.robot.particles} onReady={onReady} />
+          )}
         </SceneBoundary>
       )}
     </div>

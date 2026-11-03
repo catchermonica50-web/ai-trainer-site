@@ -37,8 +37,11 @@ export const SITE = {
     ctaSecondary: '查看能力',
   },
   robot: {
+    /** 'particles' (default) or 'glb'. The GLB file is not shipped; restore it before switching. */
+    mode: 'particles' as 'particles' | 'glb',
+    particles: '/media/fx/mech-points.v1.bin',
     model: '/media/3d/robot.v1.glb',
-    label: '背景装饰：跟随鼠标转头的低模机器人',
+    label: '背景装饰：由开场末帧机甲采样而成的粒子剪影',
   },
   skills: {
     title: '能力',
@@ -76,8 +79,9 @@ export const SITE = {
     cta: '发送邮件',
   },
   footer: {
-    credit: '背景 3D 模型：Animated Robot，作者 Quaternius（CC0 公共领域）',
-    creditUrl: 'https://poly.pizza/m/QCm7qe9uNJ',
+    /** Third-party asset credit; empty while the background uses no third-party asset. */
+    credit: '',
+    creditUrl: '',
     copyright: '© 2026 AI TRAINER',
   },
   notFound: { title: 'SIGNAL LOST', description: '当前坐标没有信号。', back: '返回首页' },

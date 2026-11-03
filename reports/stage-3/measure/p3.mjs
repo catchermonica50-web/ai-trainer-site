@@ -33,7 +33,7 @@ const toAbout = async (p) => { await p.evaluate(() => document.getElementById('a
 // 1. Desktop 1440: lazy-load, enable state, fps, magnetic, head turn screenshots.
 {
   const { ctx, p, reqs, errors } = await open({ width: 1440, height: 900 });
-  const before = { ...(await state(p)), robotRequests: reqs.filter((r) => r.url.includes('/media/3d/')).length,
+  const before = { ...(await state(p)), robotRequests: reqs.filter((r) => /\/media\/(3d|fx)\//.test(r.url)).length,
     lateChunks: reqs.map((r) => r.url).filter((u) => u.includes('/_next/static/chunks/')).length };
   const chunksBefore = new Set(reqs.map((r) => r.url));
   await toAbout(p);
@@ -59,7 +59,7 @@ const toAbout = async (p) => { await p.evaluate(() => document.getElementById('a
   const link = await p.evaluate(() => { const r = document.querySelector('.nav-link').getBoundingClientRect(); return { x: r.left + r.width / 2, y: r.top + r.height / 2 }; });
   await p.mouse.move(link.x, link.y, { steps: 3 }); await sleep(300);
   const cursorHover = await p.evaluate(() => document.querySelector('.cursor')?.dataset.hover);
-  const glb = await p.evaluate(() => performance.getEntriesByType('resource').filter((e) => e.name.includes('/media/3d/')).map((e) => ({ name: e.name.split('/').pop(), bytes: e.encodedBodySize, transfer: e.transferSize })));
+  const glb = await p.evaluate(() => performance.getEntriesByType('resource').filter((e) => /\/media\/(3d|fx)\//.test(e.name)).map((e) => ({ name: e.name.split('/').pop(), bytes: e.encodedBodySize, transfer: e.transferSize })));
   const contrast = await p.evaluate(() => {
     const css = getComputedStyle(document.documentElement); const hex = (v) => css.getPropertyValue(v).trim();
     const lum = (h) => { const n = parseInt(h.slice(1), 16); return [n >> 16, (n >> 8) & 255, n & 255].map((c) => { c /= 255; return c <= 0.03928 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4; }).reduce((s, c, i) => s + c * [0.2126, 0.7152, 0.0722][i], 0); };
@@ -83,7 +83,7 @@ for (const [name, vp, opts] of matrix) {
   const { ctx, p, reqs } = await open(vp, opts);
   await toAbout(p); await sleep(2500);
   const s = await state(p);
-  R.matrix.push({ name, ...s, robotRequested: reqs.some((r) => r.url.includes('/media/3d/')),
+  R.matrix.push({ name, ...s, robotRequested: reqs.some((r) => /\/media\/(3d|fx)\//.test(r.url)),
     magnet: await p.evaluate(() => { const m = document.querySelector('.about .magnetic'); const r = m.getBoundingClientRect(); return { x: r.right + 30, y: r.top + r.height / 2 }; }).then(async (pt) => { await p.mouse.move(pt.x, pt.y, { steps: 4 }); await sleep(300); return p.evaluate(() => document.querySelector('.about .magnetic').style.transform || ''); }) });
   await ctx.close();
 }
