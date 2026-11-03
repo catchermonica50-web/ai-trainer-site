@@ -1,6 +1,21 @@
 import { frameUrl, type FrameSet } from './assets';
 
 type Stats = { decoded: number; bytes: number; peakBytes: number; closed: number };
+const DEV = process.env.NODE_ENV !== 'production';
+/** Dev-only probe: ImageBitmaps created and not yet closed (all stores). Stripped in production. */
+export const DEV_LIVE = { live: 0, peak: 0 };
+function devCount(delta: 1 | -1) {
+  if (!DEV) return;
+  DEV_LIVE.live += delta;
+  if (DEV_LIVE.live > DEV_LIVE.peak) {
+    DEV_LIVE.peak = DEV_LIVE.live;
+    console.debug('[FrameStore] live decoded frames peak', DEV_LIVE.peak);
+  }
+  (window as unknown as { __frameStoreLive?: typeof DEV_LIVE }).__frameStoreLive =
+    DEV_LIVE;
+}
+/** Concurrent createImageBitmap calls; each in-flight decode also holds a full frame. */
+const DECODE_CONCURRENCY = 3;
 
 const WARM = 24;
 const SPARSE = 8;
@@ -53,15 +68,10 @@ export class FrameStore {
     this.fallback = this.blobs[index] ? -1 : this.nearestBlob(index);
     for (const [i, bmp] of this.bitmaps) {
       if (!this.keep(i)) {
-        bmp.close();
-        this.bitmaps.delete(i);
-        this.stats.closed += 1;
+        this.release(i, bmp);
       }
     }
-    for (let i = index - this.radius; i <= index + this.radius; i += 1) {
-      if (i >= 0 && i < this.count && this.blobs[i]) void this.decode(i);
-    }
-    if (this.fallback >= 0) void this.decode(this.fallback);
+    this.decodeWindow();
     this.updateStats();
   }
 
@@ -77,8 +87,7 @@ export class FrameStore {
 
   dispose() {
     this.abort.abort();
-    for (const bmp of this.bitmaps.values()) bmp.close();
-    this.bitmaps.clear();
+    for (const [i, bmp] of this.bitmaps) this.release(i, bmp);
     this.updateStats();
   }
 
@@ -132,15 +141,35 @@ export class FrameStore {
     return Math.abs(i - this.current) <= this.radius || i === this.fallback;
   }
 
+  /** Nearest-first: current frame, the fallback, then outwards within the radius. */
+  private decodeWindow() {
+    const order = [this.current];
+    if (this.fallback >= 0) order.push(this.fallback);
+    for (let d = 1; d <= this.radius; d += 1)
+      order.push(this.current + d, this.current - d);
+    for (const i of order) {
+      if (this.decoding.size >= DECODE_CONCURRENCY) return;
+      if (i >= 0 && i < this.count && this.blobs[i]) void this.decode(i);
+    }
+  }
+
+  /** Close and forget a frame; nothing else (canvas, caches) keeps a reference to it. */
+  private release(i: number, bmp: ImageBitmap) {
+    bmp.close();
+    if (this.bitmaps.get(i) === bmp) this.bitmaps.delete(i);
+    this.stats.closed += 1;
+    devCount(-1);
+  }
+
   private async decode(i: number) {
     const blob = this.blobs[i];
     if (!blob || this.bitmaps.has(i) || this.decoding.has(i)) return;
     this.decoding.add(i);
     try {
       const bmp = await createImageBitmap(blob);
-      if (this.abort.signal.aborted || !this.keep(i)) {
-        bmp.close();
-        this.stats.closed += 1;
+      devCount(1);
+      if (this.abort.signal.aborted || !this.keep(i) || this.bitmaps.has(i)) {
+        this.release(i, bmp);
       } else {
         this.bitmaps.set(i, bmp);
         this.updateStats();
@@ -150,6 +179,7 @@ export class FrameStore {
       this.fail();
     } finally {
       this.decoding.delete(i);
+      if (!this.abort.signal.aborted) this.decodeWindow();
     }
   }
 

@@ -19,6 +19,8 @@ type Options = {
 
 const LAST = MOTION.intro.frameCount - 1;
 const DROP_WINDOW = 90;
+/** Spec §6: decode the current frame ± 8–12; 8 keeps ≤ 17 + 1 fallback frames (≈ 150 MiB at 1080p). */
+const DECODE_RADIUS = 8;
 
 /** Pins the stage and maps scroll progress to frames 0–121 drawn on canvas. */
 export function useScrub({
@@ -34,7 +36,9 @@ export function useScrub({
     const el = stage.current;
     const cv = canvas.current;
     if (!enabled || !el || !cv) return;
-    const ctx = cv.getContext('2d');
+    // CPU-backed canvas: each drawImage copies pixels into one canvas buffer, so decoded frames are
+    // never uploaded and cached as separate GPU textures (that cache grew the GPU process by ~470 MiB).
+    const ctx = cv.getContext('2d', { alpha: false, willReadFrequently: true });
     if (!ctx) return onDowngrade();
     const set = quality === '1080' ? INTRO_MEDIA.seq1080 : INTRO_MEDIA.seq720;
     cv.width = set.width;
@@ -56,8 +60,10 @@ export function useScrub({
       if (section) {
         section.dataset.frame = String(hit.index);
         section.dataset.target = String(frame);
-        section.dataset.decoded = String(store.stats.decoded);
-        section.dataset.decodedPeakMib = (store.stats.peakBytes / 1048576).toFixed(1);
+        if (process.env.NODE_ENV !== 'production') {
+          section.dataset.decoded = String(store.stats.decoded);
+          section.dataset.decodedPeakMib = (store.stats.peakBytes / 1048576).toFixed(1);
+        }
       }
     };
     const tryActivate = (progress: number) => {
@@ -66,9 +72,15 @@ export function useScrub({
       activated = true;
       onActivate();
     };
-    const store = new FrameStore(set, MOTION.intro.frameCount, 10, onDowngrade, (i) => {
-      if (drawn !== frame && Math.abs(i - frame) < Math.abs(drawn - frame)) draw();
-    });
+    const store = new FrameStore(
+      set,
+      MOTION.intro.frameCount,
+      DECODE_RADIUS,
+      onDowngrade,
+      (i) => {
+        if (drawn !== frame && Math.abs(i - frame) < Math.abs(drawn - frame)) draw();
+      },
+    );
     // Warm the queue once the idle loop plays (poster is painted by then).
     const start = () => store.start();
     el.addEventListener('playing', start, { capture: true, once: true });
