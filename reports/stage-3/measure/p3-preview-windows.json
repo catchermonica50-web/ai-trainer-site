@@ -1,0 +1,204 @@
+{
+  "browser": "Chrome/156.0.8078.80",
+  "desktop1440": {
+    "before": {
+      "backdrop": "idle",
+      "cursor": true,
+      "hasCursorClass": true,
+      "fps": null,
+      "canvas": false,
+      "scrollY": 0,
+      "enhancedQuery": true,
+      "robotRequests": 0,
+      "lateChunks": 11
+    },
+    "newRequestsAfterScroll": [
+      "/_next/static/chunks/b536a0f1.eb1194062ec5efb1.js",
+      "/_next/static/chunks/bd904a5c.db54303232c8a55b.js",
+      "/_next/static/chunks/e49654ac.82ce8aefba2e7059.js",
+      "/_next/static/chunks/911.5222b100c0d162df.js",
+      "/_next/static/chunks/779.6833bfa98bed07c5.js",
+      "/media/3d/robot.v1.glb"
+    ],
+    "after": {
+      "backdrop": "ready",
+      "cursor": true,
+      "hasCursorClass": true,
+      "fps": "165.0",
+      "canvas": true,
+      "scrollY": 3150,
+      "enhancedQuery": true
+    },
+    "fpsSamples": [
+      165,
+      165,
+      165,
+      165,
+      165.1
+    ],
+    "magneticIn": {
+      "transform": "translate(12px, 0px)",
+      "magnet": "1"
+    },
+    "magneticOut": "",
+    "cursorHover": "1",
+    "glb": [
+      {
+        "name": "robot.v1.glb",
+        "bytes": 185832,
+        "transfer": 186132
+      }
+    ],
+    "contrast": {
+      "textDim": "#8b949e",
+      "onPanel": 5.38,
+      "onBg": 6.33
+    },
+    "errors": []
+  },
+  "matrix": [
+    {
+      "name": "1440 fine pointer",
+      "backdrop": "ready",
+      "cursor": true,
+      "hasCursorClass": true,
+      "fps": "165.0",
+      "canvas": true,
+      "scrollY": 3150,
+      "enhancedQuery": true,
+      "robotRequested": true,
+      "magnet": "translate(12px, 0px)"
+    },
+    {
+      "name": "1024 fine pointer",
+      "backdrop": "ready",
+      "cursor": true,
+      "hasCursorClass": true,
+      "fps": "165.0",
+      "canvas": true,
+      "scrollY": 2800,
+      "enhancedQuery": true,
+      "robotRequested": true,
+      "magnet": "translate(12px, 0px)"
+    },
+    {
+      "name": "1023 fine pointer",
+      "backdrop": "off",
+      "cursor": false,
+      "hasCursorClass": false,
+      "fps": null,
+      "canvas": false,
+      "scrollY": 2800,
+      "enhancedQuery": false,
+      "robotRequested": false,
+      "magnet": ""
+    },
+    {
+      "name": "768",
+      "backdrop": "off",
+      "cursor": false,
+      "hasCursorClass": false,
+      "fps": null,
+      "canvas": false,
+      "scrollY": 1024,
+      "enhancedQuery": false,
+      "robotRequested": false,
+      "magnet": ""
+    },
+    {
+      "name": "1440 reduced-motion",
+      "backdrop": "off",
+      "cursor": false,
+      "hasCursorClass": false,
+      "fps": null,
+      "canvas": false,
+      "scrollY": 900,
+      "enhancedQuery": false,
+      "robotRequested": false,
+      "magnet": ""
+    },
+    {
+      "name": "1440 touch (hasTouch+isMobile)",
+      "backdrop": "off",
+      "cursor": false,
+      "hasCursorClass": false,
+      "fps": null,
+      "canvas": false,
+      "scrollY": 900,
+      "enhancedQuery": false,
+      "robotRequested": false,
+      "magnet": ""
+    }
+  ],
+  "breakpoints": [
+    {
+      "width": 360,
+      "layout": {
+        "leftOfFigure": false,
+        "rightOfFigure": false,
+        "figureAboveText": true,
+        "overflowX": false,
+        "skillsCols": 1,
+        "toggleVisible": true,
+        "menuOpen": "block"
+      },
+      "shots": {
+        "about": "bp360-about.png",
+        "skills": "bp360-skills.png",
+        "contact": "bp360-contact.png"
+      },
+      "errors": []
+    },
+    {
+      "width": 768,
+      "layout": {
+        "leftOfFigure": false,
+        "rightOfFigure": false,
+        "figureAboveText": true,
+        "overflowX": false,
+        "skillsCols": 2,
+        "toggleVisible": true
+      },
+      "shots": {
+        "about": "bp768-about.png",
+        "skills": "bp768-skills.png",
+        "contact": "bp768-contact.png"
+      },
+      "errors": []
+    },
+    {
+      "width": 1024,
+      "layout": {
+        "leftOfFigure": true,
+        "rightOfFigure": true,
+        "figureAboveText": false,
+        "overflowX": false,
+        "skillsCols": 4,
+        "toggleVisible": false
+      },
+      "shots": {
+        "about": "bp1024-about.png",
+        "skills": "bp1024-skills.png",
+        "contact": "bp1024-contact.png"
+      },
+      "errors": []
+    },
+    {
+      "width": 1440,
+      "layout": {
+        "leftOfFigure": true,
+        "rightOfFigure": true,
+        "figureAboveText": false,
+        "overflowX": false,
+        "skillsCols": 4,
+        "toggleVisible": false
+      },
+      "shots": {
+        "about": "bp1440-about.png",
+        "skills": "bp1440-skills.png",
+        "contact": "bp1440-contact.png"
+      },
+      "errors": []
+    }
+  ]
+}
