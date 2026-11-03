@@ -1,6 +1,7 @@
 'use client';
 
 import { useCallback, useEffect, useRef, useState } from 'react';
+import { preload } from 'react-dom';
 import { SITE } from '@/content/site';
 import { INTRO_MEDIA } from '@/lib/intro/assets';
 import { hasSeenIntro, jumpToAbout, markIntroSeen } from '@/lib/intro/session';
@@ -11,6 +12,12 @@ import { IntroControls } from './IntroControls';
 import { MobileTransform } from './MobileTransform';
 
 export function IntroStage() {
+  // Emit <link rel=preload> for the LCP poster in the static HTML head.
+  preload(INTRO_MEDIA.poster.avif, {
+    as: 'image',
+    type: 'image/avif',
+    fetchPriority: 'high',
+  });
   const { mode, quality, downgrade } = useIntroMode();
   const stage = useRef<HTMLDivElement>(null);
   const canvas = useRef<HTMLCanvasElement>(null);
