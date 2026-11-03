@@ -30,7 +30,7 @@ export function IntroPicture({
         className={className}
         width={1920}
         height={1080}
-        decoding="async"
+        decoding={priority ? 'sync' : 'async'}
         fetchPriority={priority ? 'high' : 'auto'}
         loading={priority ? 'eager' : 'lazy'}
       />

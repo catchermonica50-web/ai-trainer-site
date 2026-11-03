@@ -30,9 +30,16 @@ export function IntroStage() {
   // Hold back the idle video and hero copy until the poster (LCP) has painted.
   const poster = useRef<HTMLImageElement>(null);
   const [posterReady, setPosterReady] = useState(false);
-  const onPosterLoad = useCallback(() => setPosterReady(true), []);
+  // Reveal only after the poster has decoded and painted, so it wins LCP.
+  const onPosterLoad = useCallback(() => {
+    const reveal = () =>
+      requestAnimationFrame(() => requestAnimationFrame(() => setPosterReady(true)));
+    const img = poster.current;
+    if (img?.decode) img.decode().then(reveal, reveal);
+    else reveal();
+  }, []);
   useEffect(() => {
-    if (poster.current?.complete) return setPosterReady(true);
+    if (poster.current?.complete) onPosterLoad();
     const t = window.setTimeout(onPosterLoad, 3000);
     return () => window.clearTimeout(t);
   }, [onPosterLoad]);
