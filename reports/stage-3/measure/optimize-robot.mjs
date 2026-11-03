@@ -1,0 +1,13 @@
+import { NodeIO } from '@gltf-transform/core';
+import { ALL_EXTENSIONS } from '@gltf-transform/extensions';
+import { prune, dedup, weld, meshopt } from '@gltf-transform/functions';
+import { MeshoptEncoder, MeshoptDecoder } from 'meshoptimizer';
+await MeshoptEncoder.ready; await MeshoptDecoder.ready;
+const io = new NodeIO().registerExtensions(ALL_EXTENSIONS).registerDependencies({ 'meshopt.encoder': MeshoptEncoder, 'meshopt.decoder': MeshoptDecoder });
+const doc = await io.read(process.argv[2] ?? 'QCm7qe9uNJ.glb');
+for (const a of doc.getRoot().listAnimations()) if (!a.getName().endsWith('Robot_Idle')) a.dispose();
+await doc.transform(prune(), dedup(), weld(), meshopt({ encoder: MeshoptEncoder, level: 'medium' }));
+await io.write('robot.v1.glb', doc);
+const d2 = await io.read('robot.v1.glb');
+let tris = 0; for (const m of d2.getRoot().listMeshes()) for (const p of m.listPrimitives()) tris += (p.getIndices()?.getCount() ?? p.getAttribute('POSITION').getCount()) / 3;
+console.log(JSON.stringify({ bytes: (await import('node:fs')).statSync('robot.v1.glb').size, tris, textures: d2.getRoot().listTextures().length, anims: d2.getRoot().listAnimations().map(a=>a.getName()), materials: d2.getRoot().listMaterials().map(m=>m.getName()) }));

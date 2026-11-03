@@ -14,6 +14,10 @@ export const SITE = {
     idleLabel: '开场待机循环视频：机甲跑车静置待命',
     transformLabel: '开场变身动画：跑车变形为机器人',
   },
+  navLabel: '主导航',
+  menuOpen: '打开菜单',
+  menuClose: '关闭菜单',
+  brand: 'AI/TRAINER',
   nav: [
     { id: 'intro', label: '开场' },
     { id: 'about', label: '关于我' },
@@ -26,6 +30,15 @@ export const SITE = {
     description:
       '你好，我是 [姓名]，一名 AI 训练师。我的工作是教模型理解人类的意图：整理数据、设计提示词、评估回答，再把反馈变成更好的模型。',
     stats: ['[X]+ 个项目', '[X] 万+ 条标注数据', '[X]+ 个评测任务', '[X] 年经验'],
+    eyebrow: '[ID] AI TRAINER',
+    statsLabel: '数据概览',
+    robotAlt: '变身完成的机器人正面站立，位于「关于我」中央',
+    cta: '联系我',
+    ctaSecondary: '查看能力',
+  },
+  robot: {
+    model: '/media/3d/robot.v1.glb',
+    label: '背景装饰：跟随鼠标转头的低模机器人',
   },
   skills: {
     title: '能力',
@@ -58,6 +71,14 @@ export const SITE = {
     description: '有合作、交流或只是想打个招呼，欢迎联系我。',
     email: '[email]',
     social: '[链接待定]',
+    emailLabel: 'EMAIL',
+    socialLabel: 'SOCIAL',
+    cta: '发送邮件',
+  },
+  footer: {
+    credit: '背景 3D 模型：Animated Robot，作者 Quaternius（CC0 公共领域）',
+    creditUrl: 'https://poly.pizza/m/QCm7qe9uNJ',
+    copyright: '© 2026 AI TRAINER',
   },
   notFound: { title: 'SIGNAL LOST', description: '当前坐标没有信号。', back: '返回首页' },
 } as const;

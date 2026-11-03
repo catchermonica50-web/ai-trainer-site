@@ -7,5 +7,10 @@
   ! Cache-Control
   Cache-Control: public, max-age=31536000, immutable
 
+# Versioned 3D models (robot.v1.glb); replacing a model means a new name.
+/media/3d/*
+  ! Cache-Control
+  Cache-Control: public, max-age=31536000, immutable
+
 /_next/static/*
   Cache-Control: public, max-age=31536000, immutable

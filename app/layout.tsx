@@ -3,6 +3,9 @@ import { JetBrains_Mono, Noto_Sans_SC, Orbitron, Rajdhani } from 'next/font/goog
 import { SITE } from '@/content/site';
 import '@/styles/globals.css';
 import '@/styles/intro.css';
+import '@/styles/sections.css';
+import { Nav } from '@/components/ui/Nav';
+import { Cursor } from '@/components/ui/Cursor';
 
 const ORBITRON = Orbitron({
   subsets: ['latin'],
@@ -45,7 +48,9 @@ export default function RootLayout({
         <a href="#main" className="skip-link">
           {SITE.skipLink}
         </a>
+        <Nav />
         {children}
+        <Cursor />
       </body>
     </html>
   );

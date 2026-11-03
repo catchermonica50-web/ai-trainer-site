@@ -24,7 +24,7 @@ for (let r = 0; r < +RUNS; r += 1) {
     new PerformanceObserver((l) => l.getEntries().forEach((e) => window.__lcp.push({ t: Math.round(e.startTime), tag: e.element?.tagName, size: e.size, url: e.url.split('/').pop() })))
       .observe({ type: 'largest-contentful-paint', buffered: true });
   });
-  const t0 = Date.now();
+
   await p.goto(URL_, { waitUntil: 'load', timeout: 60000 });
   await sleep(+(process.env.WAIT ?? 5000));
   const nav = await p.evaluate(() => {
@@ -42,7 +42,7 @@ for (let r = 0; r < +RUNS; r += 1) {
     const tick = () => { window.__s.push([Math.round(performance.now() - t0), +(s.dataset.target ?? 0), +(s.dataset.frame ?? 0), +(s.dataset.scrollTarget ?? 0)]); if (window.__s.length < 1200) requestAnimationFrame(tick); }; tick(); });
   await p.mouse.move(700, 450);
   for (let i = 0; i < 30; i += 1) { await p.mouse.wheel({ deltaY: 120 }); await sleep(16); } // ~3600px in ~0.6s: whole pin
-  const scrollEnd = await p.evaluate(() => performance.now());
+
   await sleep(6000);
   const s = await p.evaluate(() => window.__s);
   const behind = s.map(([t, tg, f]) => [t, Math.abs(tg - f)]);
