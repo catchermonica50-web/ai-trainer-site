@@ -1,0 +1,69 @@
+{
+ "url": "https://d3b6a0a8.ai-trainer-site.pages.dev/",
+ "browser": "Chrome/156.0.8078.80",
+ "navItems": [
+  [
+   "开场",
+   "/#intro"
+  ],
+  [
+   "关于我",
+   "/#about"
+  ],
+  [
+   "能力",
+   "/#skills"
+  ],
+  [
+   "作品集",
+   "/#work"
+  ]
+ ],
+ "contactSection": false,
+ "deadAnchors": [],
+ "mailto": 0,
+ "aboutEyebrow": "AI TRAINER",
+ "aboutDesc": "你好，我是 Trotter，一名 AI 训练师。我的工作是教模型理解人类的意图：整理数据、设计提示词、评估回答，再把反馈变成更好的模型。",
+ "placeholdersInMain": [],
+ "fontsLoaded": [
+  "Orbitron",
+  "Orbitron Fallback",
+  "Rajdhani",
+  "Rajdhani",
+  "Rajdhani Fallback",
+  "JetBrains Mono",
+  "JetBrains Mono Fallback",
+  "Noto SC First",
+  "Noto SC"
+ ],
+ "highlight": {
+  "about": "/#about",
+  "skills": "/#skills",
+  "work": "/#work",
+  "pageBottom": "/#work"
+ },
+ "tabs": [
+  "A|跳到主要内容|#main|fv=true",
+  "A|AI/TRAINER|/#intro|fv=true",
+  "A|开场|/#intro|fv=true",
+  "A|关于我|/#about|fv=true",
+  "A|能力|/#skills|fv=true",
+  "A|作品集|/#work|fv=true",
+  "A|向下滚动↓|#about|fv=true",
+  "BUTTON|跳过开场||fv=true",
+  "A|查看能力|#skills|fv=true",
+  "BUTTON|下一项作品||fv=true",
+  "DIV|作品滑轨，可用左右方向键浏览||fv=true",
+  "A|示例[01]对话模型偏好数据集设|/work/rlhf-preference-data|fv=true",
+  "A|示例[02]提示词评测基准搭建任|/work/prompt-eval-benchmark|fv=true",
+  "A|示例[03]多模态图文标注规范制|/work/multimodal-annotation-guide|fv=true",
+  "A|示例[04]模型安全红队测试设计|/work/safety-red-teaming|fv=true",
+  "BODY|跳到主要内容AI/TRAINER||fv=false",
+  "A|跳到主要内容|#main|fv=true",
+  "A|AI/TRAINER|/#intro|fv=true",
+  "A|开场|/#intro|fv=true",
+  "A|关于我|/#about|fv=true",
+  "A|能力|/#skills|fv=true",
+  "A|作品集|/#work|fv=true"
+ ]
+}

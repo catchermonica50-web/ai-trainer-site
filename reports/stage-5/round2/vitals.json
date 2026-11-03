@@ -1,0 +1,364 @@
+{
+ "browser": "Chrome/156.0.8078.80",
+ "url": "https://d3b6a0a8.ai-trainer-site.pages.dev/",
+ "firstJsGzipKB": 165.4,
+ "firstJs": [
+  {
+   "url": "/_next/static/chunks/255-2005b055456c798b.js",
+   "raw": 174363,
+   "gzip": 46677
+  },
+  {
+   "url": "/_next/static/chunks/4bd1b696-c023c6e3521b1417.js",
+   "raw": 173019,
+   "gzip": 54241
+  },
+  {
+   "url": "/_next/static/chunks/webpack-54c6d3d6603d26d1.js",
+   "raw": 3735,
+   "gzip": 1959
+  },
+  {
+   "url": "/_next/static/chunks/app/not-found-6d8c3edb6c14e8d2.js",
+   "raw": 187,
+   "gzip": 165
+  },
+  {
+   "url": "/_next/static/chunks/app/layout-363c48b16eb0e085.js",
+   "raw": 9532,
+   "gzip": 4507
+  },
+  {
+   "url": "/_next/static/chunks/app/page-58d4e82b9d4a1e05.js",
+   "raw": 31580,
+   "gzip": 12749
+  },
+  {
+   "url": "/_next/static/chunks/main-app-e318ac43286a8847.js",
+   "raw": 557,
+   "gzip": 226
+  },
+  {
+   "url": "/_next/static/chunks/619-ba102abea3e3d0e4.js",
+   "raw": 8537,
+   "gzip": 3385
+  },
+  {
+   "url": "/_next/static/chunks/c15bf2b0.ea334255f1a140fc.js",
+   "raw": 51811,
+   "gzip": 19848
+  },
+  {
+   "url": "/_next/static/chunks/605.596b13dcde22bed6.js",
+   "raw": 19424,
+   "gzip": 8173
+  },
+  {
+   "url": "/_next/static/chunks/580.823131c95794fd63.js",
+   "raw": 43364,
+   "gzip": 17440
+  }
+ ],
+ "lcpMs": 1400,
+ "cls": 0,
+ "inp": {
+  "intro": {
+   "interactions": 1,
+   "inpMs": 40,
+   "all": [
+    40
+   ]
+  },
+  "rail": {
+   "interactions": 4,
+   "inpMs": 32,
+   "all": [
+    32,
+    24,
+    24,
+    16
+   ]
+  },
+  "nav": {
+   "interactions": 5,
+   "inpMs": 24,
+   "all": [
+    24,
+    24,
+    16,
+    16,
+    16
+   ]
+  }
+ },
+ "inpOverallMs": 40,
+ "keyboardWalk": [
+  {
+   "tag": "A",
+   "text": "跳到主要内容",
+   "href": "#main",
+   "focusVisible": true,
+   "outline": true,
+   "ring": false
+  },
+  {
+   "tag": "A",
+   "text": "AI/TRAINER",
+   "href": "/#intro",
+   "focusVisible": true,
+   "outline": true,
+   "ring": false
+  },
+  {
+   "tag": "A",
+   "text": "开场",
+   "href": "/#intro",
+   "focusVisible": true,
+   "outline": true,
+   "ring": false
+  },
+  {
+   "tag": "A",
+   "text": "关于我",
+   "href": "/#about",
+   "focusVisible": true,
+   "outline": true,
+   "ring": false
+  },
+  {
+   "tag": "A",
+   "text": "能力",
+   "href": "/#skills",
+   "focusVisible": true,
+   "outline": true,
+   "ring": false
+  },
+  {
+   "tag": "A",
+   "text": "作品集",
+   "href": "/#work",
+   "focusVisible": true,
+   "outline": true,
+   "ring": false
+  },
+  {
+   "tag": "A",
+   "text": "向下滚动↓",
+   "href": "#about",
+   "focusVisible": true,
+   "outline": true,
+   "ring": false
+  },
+  {
+   "tag": "BUTTON",
+   "text": "跳过开场",
+   "href": null,
+   "focusVisible": true,
+   "outline": true,
+   "ring": false
+  },
+  {
+   "tag": "A",
+   "text": "查看能力",
+   "href": "#skills",
+   "focusVisible": true,
+   "outline": true,
+   "ring": false
+  },
+  {
+   "tag": "BUTTON",
+   "text": "下一项作品",
+   "href": null,
+   "focusVisible": true,
+   "outline": true,
+   "ring": false
+  },
+  {
+   "tag": "DIV",
+   "text": "作品滑轨，可用左右方向键浏览",
+   "href": null,
+   "focusVisible": true,
+   "outline": true,
+   "ring": false
+  },
+  {
+   "tag": "A",
+   "text": "示例[01]对话模型偏好数据集设计多维度偏好标注规范，产出用",
+   "href": "/work/rlhf-preference-data",
+   "focusVisible": true,
+   "outline": true,
+   "ring": false
+  },
+  {
+   "tag": "A",
+   "text": "示例[02]提示词评测基准搭建任务集与评分细则，对比不同提示",
+   "href": "/work/prompt-eval-benchmark",
+   "focusVisible": true,
+   "outline": true,
+   "ring": false
+  },
+  {
+   "tag": "A",
+   "text": "示例[03]多模态图文标注规范制定图文对齐、描述质量的标注指",
+   "href": "/work/multimodal-annotation-guide",
+   "focusVisible": true,
+   "outline": true,
+   "ring": false
+  },
+  {
+   "tag": "A",
+   "text": "示例[04]模型安全红队测试设计越狱与有害内容测试集，整理风",
+   "href": "/work/safety-red-teaming",
+   "focusVisible": true,
+   "outline": true,
+   "ring": false
+  },
+  {
+   "tag": "BODY",
+   "text": "跳到主要内容AI/TRAINER打开菜单开场关于我能力作品集",
+   "href": null,
+   "focusVisible": false,
+   "outline": false,
+   "ring": false
+  },
+  {
+   "tag": "A",
+   "text": "跳到主要内容",
+   "href": "#main",
+   "focusVisible": true,
+   "outline": true,
+   "ring": false
+  },
+  {
+   "tag": "A",
+   "text": "AI/TRAINER",
+   "href": "/#intro",
+   "focusVisible": true,
+   "outline": true,
+   "ring": false
+  },
+  {
+   "tag": "A",
+   "text": "开场",
+   "href": "/#intro",
+   "focusVisible": true,
+   "outline": true,
+   "ring": false
+  },
+  {
+   "tag": "A",
+   "text": "关于我",
+   "href": "/#about",
+   "focusVisible": true,
+   "outline": true,
+   "ring": false
+  },
+  {
+   "tag": "A",
+   "text": "能力",
+   "href": "/#skills",
+   "focusVisible": true,
+   "outline": true,
+   "ring": false
+  },
+  {
+   "tag": "A",
+   "text": "作品集",
+   "href": "/#work",
+   "focusVisible": true,
+   "outline": true,
+   "ring": false
+  },
+  {
+   "tag": "A",
+   "text": "向下滚动↓",
+   "href": "#about",
+   "focusVisible": true,
+   "outline": true,
+   "ring": false
+  },
+  {
+   "tag": "BUTTON",
+   "text": "跳过开场",
+   "href": null,
+   "focusVisible": true,
+   "outline": true,
+   "ring": false
+  },
+  {
+   "tag": "A",
+   "text": "查看能力",
+   "href": "#skills",
+   "focusVisible": true,
+   "outline": true,
+   "ring": false
+  },
+  {
+   "tag": "BUTTON",
+   "text": "上一项作品",
+   "href": null,
+   "focusVisible": true,
+   "outline": true,
+   "ring": false
+  },
+  {
+   "tag": "DIV",
+   "text": "作品滑轨，可用左右方向键浏览",
+   "href": null,
+   "focusVisible": true,
+   "outline": true,
+   "ring": false
+  },
+  {
+   "tag": "A",
+   "text": "示例[01]对话模型偏好数据集设计多维度偏好标注规范，产出用",
+   "href": "/work/rlhf-preference-data",
+   "focusVisible": true,
+   "outline": true,
+   "ring": false
+  },
+  {
+   "tag": "A",
+   "text": "示例[02]提示词评测基准搭建任务集与评分细则，对比不同提示",
+   "href": "/work/prompt-eval-benchmark",
+   "focusVisible": true,
+   "outline": true,
+   "ring": false
+  },
+  {
+   "tag": "A",
+   "text": "示例[03]多模态图文标注规范制定图文对齐、描述质量的标注指",
+   "href": "/work/multimodal-annotation-guide",
+   "focusVisible": true,
+   "outline": true,
+   "ring": false
+  }
+ ],
+ "h404": {
+  "status": 404,
+  "title": "SIGNAL LOST"
+ },
+ "cacheControl": {
+  "/": "public, max-age=0, must-revalidate",
+  "/robots.txt": "public, max-age=0, must-revalidate",
+  "/sitemap.xml": "public, max-age=0, must-revalidate",
+  "/og.v1.jpg": "public, max-age=31536000, immutable",
+  "/media/intro/intro-still.v1.webp": "public, max-age=31536000, immutable",
+  "/media/intro/seq-1080.v1/f000.webp": "public, max-age=31536000, immutable",
+  "/media/fx/mech-points.v1.bin": "public, max-age=31536000, immutable",
+  "/media/work/prompt-eval-benchmark.v1.webp": "public, max-age=31536000, immutable",
+  "/_next/static/chunks/255-2005b055456c798b.js": "public, max-age=31536000, immutable"
+ },
+ "meta": {
+  "title": "AI TRAINER",
+  "desc": "AI 训练师个人主页与作品集：数据、提示词、模型评测与反馈。",
+  "og": "https://ai-trainer-site.pages.dev/og.v1.jpg",
+  "canonical": "https://ai-trainer-site.pages.dev/",
+  "h1": 1
+ },
+ "robots": "User-Agent: *\nAllow: /\n\nSitemap: https://ai-trainer-site.pages.dev/sitemap.xml\n",
+ "sitemap": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n<url>\n<loc>https://ai-trainer-site.pages.dev</loc>\n</url>\n<url>\n<loc>https://ai-trainer-site.pages.dev/work/rlhf-preference-data</loc>\n</url>\n<url>\n<loc>https://ai-trainer-site.pages.dev/work/prompt-eval-benchmark</loc>\n</url>\n<url>\n<loc>https://ai-trainer-site.pages.dev/work/multimodal-annotation-guide</loc>\n</url>\n<url>\n<loc>https://ai-trainer-site.pages.dev/work/safety-red-teaming</loc>\n</url>\n</urlset>\n",
+ "errors": [
+  "Failed to load resource: the server responded with a status of 404 ()"
+ ]
+}

@@ -1,5 +1,7 @@
 # 阶段 5 验收：性能 / 无障碍 / SEO 收尾
 
+> 第二轮（125c814）：移动端 LCP 中位数 1949ms ✅，联系区和关于区占位隐藏，详见 round2.md。
+
 - 分支：`feat/stage-5-polish`，从 `c50c241` 拉出。main（425fb14）和 PR #1 都没动。
 - 代码提交：`6ea6c52` 隐藏占位内容、OG 图、缓存头、站点 URL；`d61eb9a` 首屏文字立即渲染（LCP）、关于区 reveal 改为只动 transform（AA）。
 - 测量所用预览：https://d39c630d.ai-trainer-site.pages.dev （d61eb9a）。分支别名：feat-stage-5-polish.ai-trainer-site.pages.dev
