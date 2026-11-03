@@ -1,5 +1,5 @@
 $ npm ls --depth=0
-ai-trainer-site@0.1.0 D:\Projects\ai-trainer-site
+ai-trainer-site@0.1.0 <project-root>
 ├── @emnapi/runtime@1.11.3 extraneous
 ├── @eslint/js@10.0.1
 ├── @img/sharp-wasm32@0.35.5 extraneous

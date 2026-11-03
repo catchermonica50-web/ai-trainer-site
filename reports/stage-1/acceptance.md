@@ -30,7 +30,7 @@
 在本机 PowerShell 中提交推送（执行环境无法写入 .git）：
 
 ```powershell
-Set-Location D:\Projects\ai-trainer-site
+Set-Location <project-root>
 git add .
 git commit -m "chore: scaffold static AI trainer site and design tokens"
 git push -u origin main

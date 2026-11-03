@@ -3,6 +3,6 @@ origin https://github.com/catchermonica50-web/ai-trainer-site.git (fetch)
 origin https://github.com/catchermonica50-web/ai-trainer-site.git (push)
 
 $ git add .
-fatal: Unable to create 'D:/Projects/ai-trainer-site/.git/index.lock': Permission denied
+fatal: Unable to create '<project-root>/.git/index.lock': Permission denied
 
 git add failed. git commit was not run. No commit or push was completed.

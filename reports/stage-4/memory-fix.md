@@ -31,6 +31,6 @@
 测量方法与上次相同（`reports/stage-4/measure/mem.mjs`）：唯一的改动是"擦洗后"的取样窗口改为擦洗结束后 9.5–11 秒。原始数据在 data/mem-samples.csv。
 
 ## 偏差
-- 任务管理器截图 ❌：脚本发送 Shift+Esc 后截屏，但 Windows 当时处于锁屏，截到的是锁屏画面（`/workspace/out/stage4-memfix/taskmanager-attempt-LOCKSCREEN.png`，未提交到仓库）。数值证据来自 Get-Process 和 Windows GPU 性能计数器，与上次方法一致。
+- 任务管理器截图 ❌：脚本发送 Shift+Esc 后截屏，但 Windows 当时处于锁屏，截到的是锁屏画面（`<out-dir>/stage4-memfix/taskmanager-attempt-LOCKSCREEN.png`，未提交到仓库）。数值证据来自 Get-Process 和 Windows GPU 性能计数器，与上次方法一致。
 - 盒子上的 Chrome 被判定为 mobile 模式，无法在盒子上验证，所有测量都在 Windows 上完成。
 - 合计值是各 PID 在窗口内最大值之和（不同 PID 的峰值不一定在同一时刻），结果偏保守。

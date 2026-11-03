@@ -21,4 +21,4 @@
 
 fps 说明：用 throttle.mjs 在开场区来回滚动 15 秒，统计 rAF 间隔，结束时状态都是 scrub/1080，页面错误 0。第 1 次帧数为 1629，明显偏高，可能是 CPU 降速在一开始没生效，第 2、3 次分别为 564 和 551 帧。即使去掉第 1 次，剩下两次也都 ≥30。p5 fps 依次为 54.6、32.9、32.8。
 
-原始数据在测量机 D:\Tools\_measure\prod 下（m1–m3.report.json 和 .html、fps1–3）。
+原始数据在测量机 <measure-dir> 下（m1–m3.report.json 和 .html、fps1–3）。

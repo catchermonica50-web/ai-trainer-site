@@ -10,14 +10,14 @@
 
 | # | 项 | 结果 | 证据 |
 |---|---|---|---|
-| 1 | Lighthouse 四项 ≥90（3 次取中位数） | ❌（仅 SEO） | 桌面：性能 96 / 无障碍 100 / 最佳实践 100 / SEO 69。移动：95 / 100 / 100 / 69。SEO 只有 `is-crawlable` 一项失败，原因是 Cloudflare 给所有预览域名加了 `x-robots-tag: noindex`（已用 curl 确认），站点代码本身没有 noindex；正式站 ai-trainer-site.pages.dev 不带这个头。按约定不部署 main，所以无法在正式站上测。数据见 data/lh/summary.json，完整报告在 /workspace/out/stage5/lh/ |
+| 1 | Lighthouse 四项 ≥90（3 次取中位数） | ❌（仅 SEO） | 桌面：性能 96 / 无障碍 100 / 最佳实践 100 / SEO 69。移动：95 / 100 / 100 / 69。SEO 只有 `is-crawlable` 一项失败，原因是 Cloudflare 给所有预览域名加了 `x-robots-tag: noindex`（已用 curl 确认），站点代码本身没有 noindex；正式站 ai-trainer-site.pages.dev 不带这个头。按约定不部署 main，所以无法在正式站上测。数据见 data/lh/summary.json，完整报告在 <out-dir>/stage5/lh/ |
 | 2 | LCP <2.5s，CLS <0.1 | 桌面 ✅ / 移动 ❌ | 桌面 LCP 中位数 711ms，CLS 0。移动（Moto G Power 模拟 + 4G 限速）LCP 中位数 2832ms（三次分别为 2772/2832/2964），CLS 0。LCP 元素是 h1 "AI TRAINER"：TTFB 约 1.03s，渲染延迟约 1.8s（第一次跑时 LCP 是 4078/2752/3304，d61eb9a 去掉了"首屏文字等海报出来再显示"之后有所下降）。真实桌面 Chrome 用 PerformanceObserver 测得 LCP 1556ms |
 | 3 | 首屏 JS ≤180KB（gzip，含自动加载的分包） | ✅ | 165.3 KB。统计方法：加载后静置 8 秒、不做任何操作，期间加载的全部脚本都计入（包括动态分包 c15bf2b0、605、580），每个文件单独 gzip -9 后求和。明细见 vitals.json 的 firstJs。没有发现要交互后才加载的分包 |
 | 4 | 开场、滑轨、导航真实交互的 INP | ✅ | 用 Event Timing（web-vitals 用的就是这个数据源），通过有界面的 Chrome 真实发送鼠标和键盘输入。开场 168ms（只记到 1 次交互），滑轨 64ms（6 次：方向键 + 拖拽），导航 24ms（7 次）。整体 168ms，低于 200ms |
 | 5 | 404 页面 | ✅ | /no-such-page-xyz 返回 HTTP 404，h1 为 "SIGNAL LOST"，截图 shots/404.png |
 | 6 | `_headers` | ✅ | HTML、robots、sitemap：`max-age=0, must-revalidate`。版本化文件 /media/intro、/media/fx、/media/work、/og.v1.jpg 和 /_next/static：`max-age=31536000, immutable`（在预览上逐个实测） |
 | 7 | 占位内容不渲染 | ✅ | `lib/placeholder.ts`：值为空、含 [X]、或者整体是 `[...]` 的统计卡、邮箱、社交链接，在生产构建里不渲染；邮箱是占位时"发送邮件"按钮也一起隐藏。开发模式照常显示，方便填写。填上真实值后会自动出现。生产版 out/index.html 中搜不到 [X]、[email]、链接待定。示例作品保留 [X] 和「示例」标签 |
-| 8 | CPU 6x 降速时掉帧降级 | ✅ | 触发阈值（useScrub.ts）：擦洗时收集 90 个 gsap ticker 间隔，若超过 45 个大于 34ms（即约低于 29fps），就降一级，顺序是 1080 → 720 → 定格图。实测在 7144ms 时从 scrub/1080 降为 scrub/720：1080 档平均 19.6fps，720 档平均 29.9fps。录屏 /workspace/out/stage5/cpu6x-downgrade.mp4，截图 shots/cpu6x-*.png。数据见 data/cpu6x.json。之前在 6ea6c52 预览上跑过一次，3742ms 时降为 720 |
+| 8 | CPU 6x 降速时掉帧降级 | ✅ | 触发阈值（useScrub.ts）：擦洗时收集 90 个 gsap ticker 间隔，若超过 45 个大于 34ms（即约低于 29fps），就降一级，顺序是 1080 → 720 → 定格图。实测在 7144ms 时从 scrub/1080 降为 scrub/720：1080 档平均 19.6fps，720 档平均 29.9fps。录屏 <out-dir>/stage5/cpu6x-downgrade.mp4，截图 shots/cpu6x-*.png。数据见 data/cpu6x.json。之前在 6ea6c52 预览上跑过一次，3742ms 时降为 720 |
 | 9 | CPU 4x 降速擦洗 ≥30fps | ✅（以均值计，余量很小） | 在 d39c630d 上跑了 3 次（15 秒持续擦洗）：平均 32.3 / 32.4 / 32.1fps。第 3 次中途降到了 720 档。P5 为 27.4 / 27.4 / 13.8。另外 run0 是 32.3。在 6ea6c52 预览上的那一次是 42.0fps。这台机器前后测量波动很大：同一个旧构建 dde81f6a，事后复测只有 20.1fps，所以数值受机器状态影响 |
 | 10 | 键盘、对比度 AA、视频替代文字 | ✅ | Tab 能依次走到跳转链接、导航、开场按钮、关于区按钮、滑轨按钮、滑轨本身和 4 张作品卡，每一项都有 :focus-visible 和 outline（vitals.json 的 keyboardWalk，截图 shots/keyboard-focus.png）。Lighthouse 无障碍 100：之前关于区按钮因淡入动画处于半透明，对比度 2.53，已改成只做位移的 reveal。待机和变身视频都有 aria-label，定格图有 alt |
 | 11 | metadata、OG、sitemap、robots | ✅ | 每页有 title、description、canonical；首页 OG 图为 og.v1.jpg（1200×630），另有 twitter large card；作品页用封面作 OG 图，并带 JSON-LD；sitemap 和 robots 的域名已从 localhost 改为 https://ai-trainer-site.pages.dev（可用 NEXT_PUBLIC_SITE_URL 覆盖）；每页只有一个 h1 |
