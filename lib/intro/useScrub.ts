@@ -47,13 +47,15 @@ export function useScrub({
     let cleanup = () => {};
     const section = el.closest('section');
 
+    // Draws the target frame, or the nearest decoded one while it is missing.
     const draw = () => {
-      const bmp = store.get(frame);
-      if (!bmp) return;
-      ctx.drawImage(bmp, 0, 0, set.width, set.height);
-      drawn = frame;
+      const hit = store.get(frame);
+      if (!hit) return;
+      ctx.drawImage(hit.bmp, 0, 0, set.width, set.height);
+      drawn = hit.index;
       if (section) {
-        section.dataset.frame = String(frame);
+        section.dataset.frame = String(hit.index);
+        section.dataset.target = String(frame);
         section.dataset.decoded = String(store.stats.decoded);
         section.dataset.decodedPeakMib = (store.stats.peakBytes / 1048576).toFixed(1);
       }
@@ -65,9 +67,12 @@ export function useScrub({
       onActivate();
     };
     const store = new FrameStore(set, MOTION.intro.frameCount, 10, onDowngrade, (i) => {
-      if (i === frame || drawn !== frame) draw();
+      if (drawn !== frame && Math.abs(i - frame) < Math.abs(drawn - frame)) draw();
     });
-    void store.download();
+    // Warm the queue once the idle loop plays (poster is painted by then).
+    const start = () => store.start();
+    el.addEventListener('playing', start, { capture: true, once: true });
+    const warmTimer = window.setTimeout(start, 2500);
 
     void (async () => {
       const [{ gsap }, { ScrollTrigger }] = await Promise.all([
@@ -90,7 +95,12 @@ export function useScrub({
           end: `+=${MOTION.intro.scrollScreens * 100}%`,
           pin: true,
           scrub: MOTION.scrub,
-          onUpdate: (st) => tryActivate(st.progress),
+          onUpdate: (st) => {
+            const target = Math.round(st.progress * LAST);
+            store.setTarget(target);
+            if (section) section.dataset.scrollTarget = String(target);
+            tryActivate(st.progress);
+          },
           onLeave: () => markIntroSeen(),
         },
         onUpdate: () => {
@@ -122,6 +132,8 @@ export function useScrub({
 
     return () => {
       disposed = true;
+      window.clearTimeout(warmTimer);
+      el.removeEventListener('playing', start, { capture: true });
       cleanup();
       store.dispose();
     };

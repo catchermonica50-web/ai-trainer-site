@@ -16,6 +16,7 @@ export function IntroStage() {
   preload(INTRO_MEDIA.poster.avif, {
     as: 'image',
     type: 'image/avif',
+    imageSrcSet: INTRO_MEDIA.poster.avif,
     fetchPriority: 'high',
   });
   const { mode, quality, downgrade } = useIntroMode();
@@ -26,6 +27,15 @@ export function IntroStage() {
   const scrubbingRef = useRef(false);
   const [needsPlay, setNeedsPlay] = useState(false);
   const [idleFailed, setIdleFailed] = useState(false);
+  // Hold back the idle video and hero copy until the poster (LCP) has painted.
+  const poster = useRef<HTMLImageElement>(null);
+  const [posterReady, setPosterReady] = useState(false);
+  const onPosterLoad = useCallback(() => setPosterReady(true), []);
+  useEffect(() => {
+    if (poster.current?.complete) return setPosterReady(true);
+    const t = window.setTimeout(onPosterLoad, 3000);
+    return () => window.clearTimeout(t);
+  }, [onPosterLoad]);
 
   const activate = useCallback(() => {
     scrubbingRef.current = true;
@@ -51,13 +61,13 @@ export function IntroStage() {
   });
 
   useEffect(() => {
-    if (mode === 'pending') return;
+    if (mode === 'pending' || !posterReady) return;
     // Scrub mode jumps from onReady, after the pin spacer changes the layout.
     if (mode !== 'scrub') requestAnimationFrame(returnToAbout);
     const video = idle.current;
     if (!video) return;
     video.play().catch(() => setNeedsPlay(true));
-  }, [mode, returnToAbout]);
+  }, [mode, posterReady, returnToAbout]);
 
   const skip = () => {
     markIntroSeen();
@@ -70,7 +80,7 @@ export function IntroStage() {
       .catch(() => setIdleFailed(true));
   };
 
-  const showIdle = mode === 'scrub' || mode === 'mobile';
+  const showIdle = posterReady && (mode === 'scrub' || mode === 'mobile');
   const still = mode === 'still' || idleFailed;
 
   return (
@@ -79,11 +89,14 @@ export function IntroStage() {
       className="intro-stage"
       data-mode={still ? 'still' : mode}
       data-quality={quality}
+      data-poster-ready={posterReady ? '1' : undefined}
     >
       <IntroPicture
         media={INTRO_MEDIA.poster}
         className="intro-layer"
         alt={SITE.intro.posterAlt}
+        imgRef={poster}
+        onLoad={onPosterLoad}
         priority
       />
       {showIdle && !idleFailed && (
