@@ -1,7 +1,9 @@
 export const SITE = {
-  url: process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000',
+  url: process.env.NEXT_PUBLIC_SITE_URL || 'https://ai-trainer-site.pages.dev',
   title: 'AI TRAINER',
   description: 'AI 训练师个人主页与作品集：数据、提示词、模型评测与反馈。',
+  ogImage: '/og.v1.jpg',
+  ogAlt: 'AI TRAINER：变身完成的机甲机器人',
   skipLink: '跳到主要内容',
   intro: {
     eyebrow: 'HUMAN INTENT / MACHINE INTELLIGENCE',

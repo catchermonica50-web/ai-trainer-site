@@ -35,6 +35,16 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: { default: SITE.title, template: `%s | ${SITE.title}` },
   description: SITE.description,
+  alternates: { canonical: '/' },
+  openGraph: {
+    type: 'website',
+    siteName: SITE.title,
+    title: SITE.title,
+    description: SITE.description,
+    locale: 'zh_CN',
+    images: [{ url: SITE.ogImage, width: 1200, height: 630, alt: SITE.ogAlt }],
+  },
+  twitter: { card: 'summary_large_image', images: [SITE.ogImage] },
 };
 
 export default function RootLayout({

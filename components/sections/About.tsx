@@ -4,10 +4,12 @@ import { RobotBackdrop } from '@/components/fx/RobotBackdrop';
 import { Button } from '@/components/ui/Button';
 import { Tag } from '@/components/ui/Tag';
 import { IntroPicture } from './intro/IntroPicture';
+import { shown } from '@/lib/placeholder';
 
 /** Video end-frame robot in the middle, copy on either side; stacked on mobile. */
 export function About() {
   const { about } = SITE;
+  const stats = about.stats.filter(shown);
   return (
     <section id="about" className="about" aria-labelledby="about-title">
       <RobotBackdrop />
@@ -25,11 +27,13 @@ export function About() {
           />
         </div>
         <div className="about-copy about-right reveal">
-          <ul className="about-stats" aria-label={about.statsLabel}>
-            {about.stats.map((s) => (
-              <li key={s}>{s}</li>
-            ))}
-          </ul>
+          {stats.length > 0 && (
+            <ul className="about-stats" aria-label={about.statsLabel}>
+              {stats.map((s) => (
+                <li key={s}>{s}</li>
+              ))}
+            </ul>
+          )}
           <div className="about-actions">
             <Button href="#contact">{about.cta}</Button>
             <Button href="#skills" variant="secondary">
