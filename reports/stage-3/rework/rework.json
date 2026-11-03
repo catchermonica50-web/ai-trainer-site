@@ -1,0 +1,358 @@
+{
+ "browser": "Chrome/156.0.8078.80",
+ "particles": {
+  "at0": {
+   "scrollY": 0,
+   "backdropRequests": [],
+   "state": "idle"
+  },
+  "afterScroll": [
+   "/_next/static/chunks/bd904a5c.db54303232c8a55b.js",
+   "/_next/static/chunks/e49654ac.d7d07e7688b3fc01.js",
+   "/_next/static/chunks/b536a0f1.eb1194062ec5efb1.js",
+   "/_next/static/chunks/847.7270ac9b31e6d335.js",
+   "/_next/static/chunks/78.6bab9aa81db2c328.js",
+   "/media/fx/mech-points.v1.bin"
+  ],
+  "probes": {
+   "left": {
+    "engine": "three.js r187",
+    "fps": "165.0",
+    "near": "0.00",
+    "look": "-0.600,-0.023",
+    "points": "7800"
+   },
+   "right": {
+    "engine": "three.js r187",
+    "fps": "164.9",
+    "near": "0.00",
+    "look": "0.321,-0.023",
+    "points": "7800"
+   },
+   "far-bottom-left": {
+    "engine": "three.js r187",
+    "fps": "159.1",
+    "near": "0.02",
+    "look": "-0.055,0.268",
+    "points": "7800"
+   },
+   "on-visor": {
+    "engine": "three.js r187",
+    "fps": "164.0",
+    "near": "0.00",
+    "look": "-0.065,0.350",
+    "points": "7800"
+   }
+  },
+  "fps": [
+   165,
+   165,
+   165.1,
+   165,
+   165
+  ],
+  "files": [
+   {
+    "name": "/media/fx/mech-points.v1.bin",
+    "bytes": 46804
+   }
+  ],
+  "errors": []
+ },
+ "contrast": [
+  {
+   "width": 1024,
+   "opacity": "0.4",
+   "near": "0.88",
+   "cards": [
+    {
+     "sel": ".about-stats li[0]",
+     "text": "[X]+ 个项目",
+     "color": "201,209,217",
+     "meanBg": "26,31,38",
+     "meanRatio": 10.73,
+     "worstBg": "26,31,38",
+     "worstRatio": 10.73
+    },
+    {
+     "sel": ".about-stats li[1]",
+     "text": "[X] 万+ 条标注数据",
+     "color": "201,209,217",
+     "meanBg": "26,31,38",
+     "meanRatio": 10.73,
+     "worstBg": "26,31,38",
+     "worstRatio": 10.73
+    },
+    {
+     "sel": ".about-stats li[2]",
+     "text": "[X]+ 个评测任务",
+     "color": "201,209,217",
+     "meanBg": "26,31,38",
+     "meanRatio": 10.73,
+     "worstBg": "26,31,38",
+     "worstRatio": 10.73
+    },
+    {
+     "sel": ".about-stats li[3]",
+     "text": "[X] 年经验",
+     "color": "201,209,217",
+     "meanBg": "26,31,38",
+     "meanRatio": 10.73,
+     "worstBg": "26,31,38",
+     "worstRatio": 10.73
+    },
+    {
+     "sel": ".about-actions .btn[0]",
+     "text": "联系我",
+     "color": "255,106,43",
+     "meanBg": "11,13,16",
+     "meanRatio": 6.81,
+     "worstBg": "12,13,16",
+     "worstRatio": 6.8
+    },
+    {
+     "sel": ".about-actions .btn[1]",
+     "text": "查看能力",
+     "color": "201,209,217",
+     "meanBg": "11,13,16",
+     "meanRatio": 12.59,
+     "worstBg": "12,14,17",
+     "worstRatio": 12.52
+    },
+    {
+     "sel": ".about-desc[0]",
+     "text": "你好，我是 [姓名]，一名 AI 训练师",
+     "color": "139,148,158",
+     "meanBg": "11,13,16",
+     "meanRatio": 6.33,
+     "worstBg": "11,13,16",
+     "worstRatio": 6.33
+    }
+   ]
+  },
+  {
+   "width": 1440,
+   "opacity": "0.4",
+   "near": "0.85",
+   "cards": [
+    {
+     "sel": ".about-stats li[0]",
+     "text": "[X]+ 个项目",
+     "color": "201,209,217",
+     "meanBg": "26,31,38",
+     "meanRatio": 10.73,
+     "worstBg": "26,31,38",
+     "worstRatio": 10.73
+    },
+    {
+     "sel": ".about-stats li[1]",
+     "text": "[X] 万+ 条标注数据",
+     "color": "201,209,217",
+     "meanBg": "26,31,38",
+     "meanRatio": 10.73,
+     "worstBg": "26,31,38",
+     "worstRatio": 10.73
+    },
+    {
+     "sel": ".about-stats li[2]",
+     "text": "[X]+ 个评测任务",
+     "color": "201,209,217",
+     "meanBg": "26,31,38",
+     "meanRatio": 10.73,
+     "worstBg": "26,31,38",
+     "worstRatio": 10.73
+    },
+    {
+     "sel": ".about-stats li[3]",
+     "text": "[X] 年经验",
+     "color": "201,209,217",
+     "meanBg": "26,31,38",
+     "meanRatio": 10.73,
+     "worstBg": "26,31,38",
+     "worstRatio": 10.73
+    },
+    {
+     "sel": ".about-actions .btn[0]",
+     "text": "联系我",
+     "color": "255,106,43",
+     "meanBg": "11,13,16",
+     "meanRatio": 6.81,
+     "worstBg": "12,13,16",
+     "worstRatio": 6.8
+    },
+    {
+     "sel": ".about-actions .btn[1]",
+     "text": "查看能力",
+     "color": "201,209,217",
+     "meanBg": "11,13,16",
+     "meanRatio": 12.59,
+     "worstBg": "12,14,17",
+     "worstRatio": 12.52
+    },
+    {
+     "sel": ".about-desc[0]",
+     "text": "你好，我是 [姓名]，一名 AI 训练师",
+     "color": "139,148,158",
+     "meanBg": "11,13,16",
+     "meanRatio": 6.33,
+     "worstBg": "11,13,16",
+     "worstRatio": 6.33
+    }
+   ]
+  }
+ ],
+ "overflow": [
+  {
+   "width": 360,
+   "rows": [
+    {
+     "where": "top",
+     "innerWidth": 360,
+     "clientWidth": 345,
+     "scrollWidth": 345,
+     "wide": []
+    },
+    {
+     "where": "about",
+     "innerWidth": 360,
+     "clientWidth": 345,
+     "scrollWidth": 345,
+     "wide": []
+    },
+    {
+     "where": "skills",
+     "innerWidth": 360,
+     "clientWidth": 345,
+     "scrollWidth": 345,
+     "wide": []
+    },
+    {
+     "where": "contact",
+     "innerWidth": 360,
+     "clientWidth": 345,
+     "scrollWidth": 345,
+     "wide": []
+    }
+   ]
+  },
+  {
+   "width": 768,
+   "rows": [
+    {
+     "where": "top",
+     "innerWidth": 768,
+     "clientWidth": 753,
+     "scrollWidth": 753,
+     "wide": []
+    },
+    {
+     "where": "about",
+     "innerWidth": 768,
+     "clientWidth": 753,
+     "scrollWidth": 753,
+     "wide": []
+    },
+    {
+     "where": "skills",
+     "innerWidth": 768,
+     "clientWidth": 753,
+     "scrollWidth": 753,
+     "wide": []
+    },
+    {
+     "where": "contact",
+     "innerWidth": 768,
+     "clientWidth": 753,
+     "scrollWidth": 753,
+     "wide": []
+    }
+   ]
+  },
+  {
+   "width": 1024,
+   "rows": [
+    {
+     "where": "top",
+     "innerWidth": 1024,
+     "clientWidth": 1009,
+     "scrollWidth": 1009,
+     "wide": []
+    },
+    {
+     "where": "about",
+     "innerWidth": 1024,
+     "clientWidth": 1009,
+     "scrollWidth": 1009,
+     "wide": []
+    },
+    {
+     "where": "skills",
+     "innerWidth": 1024,
+     "clientWidth": 1009,
+     "scrollWidth": 1009,
+     "wide": []
+    },
+    {
+     "where": "contact",
+     "innerWidth": 1024,
+     "clientWidth": 1009,
+     "scrollWidth": 1009,
+     "wide": []
+    }
+   ]
+  },
+  {
+   "width": 1440,
+   "rows": [
+    {
+     "where": "top",
+     "innerWidth": 1440,
+     "clientWidth": 1425,
+     "scrollWidth": 1425,
+     "wide": []
+    },
+    {
+     "where": "about",
+     "innerWidth": 1440,
+     "clientWidth": 1425,
+     "scrollWidth": 1425,
+     "wide": []
+    },
+    {
+     "where": "skills",
+     "innerWidth": 1440,
+     "clientWidth": 1425,
+     "scrollWidth": 1425,
+     "wide": []
+    },
+    {
+     "where": "contact",
+     "innerWidth": 1440,
+     "clientWidth": 1425,
+     "scrollWidth": 1425,
+     "wide": []
+    }
+   ]
+  }
+ ],
+ "skipLink": {
+  "before": {
+   "focused": false,
+   "top": -73.91667175292969,
+   "bottom": -22.718753814697266,
+   "visibleInViewport": false
+  },
+  "focused": {
+   "focused": true,
+   "top": 8,
+   "bottom": 59.19791793823242,
+   "visibleInViewport": true
+  },
+  "blurred": {
+   "focused": false,
+   "top": -73.91667175292969,
+   "bottom": -22.718753814697266,
+   "visibleInViewport": false
+  }
+ }
+}
