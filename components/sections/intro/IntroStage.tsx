@@ -28,7 +28,7 @@ export function IntroStage() {
   const scrubbingRef = useRef(false);
   const [needsPlay, setNeedsPlay] = useState(false);
   const [idleFailed, setIdleFailed] = useState(false);
-  // Hold back the idle video and hero copy until the poster (LCP) has painted.
+  // Hold back the idle video until the poster has painted. The hero copy renders at once (it is the LCP element).
   const poster = useRef<HTMLImageElement>(null);
   const [posterReady, setPosterReady] = useState(false);
   // Reveal only after the poster has decoded and painted, so it wins LCP.

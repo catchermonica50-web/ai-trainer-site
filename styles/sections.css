@@ -426,16 +426,15 @@
   opacity: 1;
 }
 
-/* Copy fades in from both sides of the robot (scroll-driven where supported). */
+/* Copy slides in from both sides of the robot (scroll-driven where supported).
+   Transform only: a partial-opacity frame would drop the buttons below AA contrast. */
 @keyframes reveal-left {
   from {
-    opacity: 0;
     transform: translateX(-24px);
   }
 }
 @keyframes reveal-right {
   from {
-    opacity: 0;
     transform: translateX(24px);
   }
 }

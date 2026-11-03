@@ -93,11 +93,3 @@
     animation: none;
   }
 }
-
-/* Hero copy waits for the poster so the poster stays the LCP element. */
-.intro-stage:not([data-poster-ready]) .intro-copy {
-  opacity: 0;
-}
-.intro-copy {
-  transition: opacity 150ms ease-out;
-}
