@@ -1,0 +1,545 @@
+{
+  "browser": "Chrome/156.0.8078.74",
+  "desktop": {
+    "lcp": [
+      {
+        "t": 2028,
+        "tag": "H1",
+        "url": ""
+      }
+    ],
+    "hintOpacity": {
+      "at300ms": "0",
+      "at2300ms": "1"
+    },
+    "idle": {
+      "first": {
+        "paused": false,
+        "loop": true,
+        "muted": true,
+        "t": 0.5543,
+        "src": "https://4a6a1a83.ai-trainer-site.pages.dev/media/intro/intro-idle.v1.webm",
+        "ended": false
+      },
+      "oneSecLater": {
+        "paused": false,
+        "loop": true,
+        "muted": true,
+        "t": 1.5638,
+        "src": "https://4a6a1a83.ai-trainer-site.pages.dev/media/intro/intro-idle.v1.webm",
+        "ended": false
+      }
+    },
+    "mode": "scrub",
+    "quality": "1080",
+    "tabOrder": [
+      "跳到主要内容",
+      "向下滚动↓",
+      "跳过开场",
+      "跳到主要内容HUMAN INTENT / MAC"
+    ],
+    "fade": "0.15s",
+    "idleBeforeScrub": {
+      "paused": false,
+      "loop": true,
+      "muted": true,
+      "t": 2.6041,
+      "src": "https://4a6a1a83.ai-trainer-site.pages.dev/media/intro/intro-idle.v1.webm",
+      "ended": false
+    }
+  },
+  "scrub": {
+    "frames": 3605,
+    "avgFps": 164.9,
+    "p95FrameMs": 6.3,
+    "over34ms": 0,
+    "atEnd": {
+      "mode": "scrub",
+      "quality": "1080",
+      "frame": 58,
+      "decoded": 1,
+      "peakMiB": 166.1,
+      "scrollY": 3676,
+      "aboutTop": -526,
+      "video": {
+        "paused": true,
+        "loop": true,
+        "muted": true,
+        "t": 3.3589,
+        "src": "https://4a6a1a83.ai-trainer-site.pages.dev/media/intro/intro-idle.v1.webm",
+        "ended": false
+      },
+      "still": false,
+      "seen": "1"
+    },
+    "pastEnd": {
+      "mode": "scrub",
+      "quality": "1080",
+      "frame": 121,
+      "decoded": 11,
+      "peakMiB": 166.1,
+      "scrollY": 3676,
+      "aboutTop": -526,
+      "video": {
+        "paused": true,
+        "loop": true,
+        "muted": true,
+        "t": 3.3589,
+        "src": "https://4a6a1a83.ai-trainer-site.pages.dev/media/intro/intro-idle.v1.webm",
+        "ended": false
+      },
+      "still": false,
+      "seen": "1"
+    },
+    "backAtTop": {
+      "mode": "scrub",
+      "quality": "1080",
+      "frame": 0,
+      "decoded": 11,
+      "peakMiB": 166.1,
+      "scrollY": 0,
+      "aboutTop": 3150,
+      "video": {
+        "paused": true,
+        "loop": true,
+        "muted": true,
+        "t": 3.3589,
+        "src": "https://4a6a1a83.ai-trainer-site.pages.dev/media/intro/intro-idle.v1.webm",
+        "ended": false
+      },
+      "still": false,
+      "seen": "1"
+    },
+    "peakDecodedMiB": 166.1,
+    "maxDecodedFrames": 21,
+    "frameTrace": [
+      [
+        30,
+        0,
+        11
+      ],
+      [
+        330,
+        14,
+        21
+      ],
+      [
+        630,
+        31,
+        20
+      ],
+      [
+        930,
+        47,
+        10
+      ],
+      [
+        1230,
+        58,
+        1
+      ],
+      [
+        1530,
+        58,
+        1
+      ],
+      [
+        1830,
+        58,
+        1
+      ],
+      [
+        2130,
+        58,
+        1
+      ],
+      [
+        2430,
+        58,
+        1
+      ],
+      [
+        2730,
+        58,
+        1
+      ],
+      [
+        3030,
+        58,
+        1
+      ],
+      [
+        3330,
+        58,
+        1
+      ],
+      [
+        3630,
+        58,
+        1
+      ],
+      [
+        3676,
+        58,
+        1
+      ],
+      [
+        3676,
+        58,
+        1
+      ],
+      [
+        3616,
+        121,
+        11
+      ],
+      [
+        2116,
+        118,
+        13
+      ],
+      [
+        616,
+        39,
+        19
+      ],
+      [
+        0,
+        0,
+        11
+      ],
+      [
+        0,
+        0,
+        11
+      ],
+      [
+        0,
+        0,
+        11
+      ],
+      [
+        0,
+        0,
+        11
+      ],
+      [
+        0,
+        0,
+        11
+      ],
+      [
+        0,
+        0,
+        11
+      ],
+      [
+        0,
+        0,
+        11
+      ],
+      [
+        0,
+        0,
+        11
+      ],
+      [
+        0,
+        0,
+        11
+      ],
+      [
+        0,
+        0,
+        11
+      ],
+      [
+        0,
+        0,
+        11
+      ],
+      [
+        0,
+        0,
+        11
+      ],
+      [
+        0,
+        0,
+        11
+      ]
+    ]
+  },
+  "returnVisit": {
+    "mode": "scrub",
+    "quality": "1080",
+    "frame": 121,
+    "decoded": 9,
+    "peakMiB": 71.2,
+    "scrollY": 3150,
+    "aboutTop": 0,
+    "video": {
+      "paused": false,
+      "loop": true,
+      "muted": true,
+      "t": 2.105,
+      "src": "https://4a6a1a83.ai-trainer-site.pages.dev/media/intro/intro-idle.v1.webm",
+      "ended": false
+    },
+    "still": false,
+    "seen": "1"
+  },
+  "desktopConsoleErrors": [],
+  "skip": {
+    "mode": "scrub",
+    "quality": "1080",
+    "frame": 121,
+    "decoded": 11,
+    "peakMiB": 142.4,
+    "scrollY": 3150,
+    "aboutTop": 0,
+    "video": {
+      "paused": true,
+      "loop": true,
+      "muted": true,
+      "t": 0.8734,
+      "src": "https://4a6a1a83.ai-trainer-site.pages.dev/media/intro/intro-idle.v1.webm",
+      "ended": false
+    },
+    "still": false,
+    "seen": "1",
+    "errors": []
+  },
+  "skipThenReturn": {
+    "mode": "scrub",
+    "quality": "1080",
+    "frame": 121,
+    "decoded": 9,
+    "peakMiB": 166.1,
+    "scrollY": 3150,
+    "aboutTop": 0,
+    "video": {
+      "paused": false,
+      "loop": true,
+      "muted": true,
+      "t": 2.0622,
+      "src": "https://4a6a1a83.ai-trainer-site.pages.dev/media/intro/intro-idle.v1.webm",
+      "ended": false
+    },
+    "still": false,
+    "seen": "1"
+  },
+  "skipThenScrollUp": {
+    "mode": "scrub",
+    "quality": "1080",
+    "frame": 40,
+    "decoded": 21,
+    "peakMiB": 166.1,
+    "scrollY": 750,
+    "aboutTop": 2400,
+    "video": {
+      "paused": true,
+      "loop": true,
+      "muted": true,
+      "t": 2.7805,
+      "src": "https://4a6a1a83.ai-trainer-site.pages.dev/media/intro/intro-idle.v1.webm",
+      "ended": false
+    },
+    "still": false,
+    "seen": "1"
+  },
+  "mobile": {
+    "before": {
+      "mode": "mobile",
+      "quality": "720",
+      "frame": -1,
+      "decoded": 0,
+      "peakMiB": 0,
+      "scrollY": 0,
+      "aboutTop": 844,
+      "video": {
+        "paused": false,
+        "loop": true,
+        "muted": true,
+        "t": 1.7772,
+        "src": "https://4a6a1a83.ai-trainer-site.pages.dev/media/intro/intro-idle.v1.webm",
+        "ended": false
+      },
+      "still": false,
+      "seen": null
+    },
+    "after": {
+      "mode": "mobile",
+      "quality": "720",
+      "frame": -1,
+      "decoded": 0,
+      "peakMiB": 0,
+      "scrollY": 80,
+      "aboutTop": 764,
+      "video": {
+        "paused": true,
+        "loop": true,
+        "muted": true,
+        "t": 1.9878,
+        "src": "https://4a6a1a83.ai-trainer-site.pages.dev/media/intro/intro-idle.v1.webm",
+        "ended": false
+      },
+      "still": false,
+      "seen": "1"
+    },
+    "errors": []
+  },
+  "reducedMotion": {
+    "before": {
+      "mode": "still",
+      "quality": "720",
+      "frame": -1,
+      "decoded": 0,
+      "peakMiB": 0,
+      "scrollY": 0,
+      "aboutTop": 900,
+      "video": null,
+      "still": true,
+      "seen": null
+    },
+    "after": null,
+    "errors": []
+  },
+  "lowMemory": {
+    "before": {
+      "mode": "scrub",
+      "quality": "720",
+      "frame": 0,
+      "decoded": 6,
+      "peakMiB": 21.1,
+      "scrollY": 0,
+      "aboutTop": 3150,
+      "video": {
+        "paused": false,
+        "loop": true,
+        "muted": true,
+        "t": 3.4958,
+        "src": "https://4a6a1a83.ai-trainer-site.pages.dev/media/intro/intro-idle.v1.webm",
+        "ended": false
+      },
+      "still": false,
+      "seen": null
+    },
+    "after": {
+      "mode": "scrub",
+      "quality": "720",
+      "frame": 121,
+      "decoded": 11,
+      "peakMiB": 73.8,
+      "scrollY": 2400,
+      "aboutTop": 750,
+      "video": {
+        "paused": true,
+        "loop": true,
+        "muted": true,
+        "t": 3.7174,
+        "src": "https://4a6a1a83.ai-trainer-site.pages.dev/media/intro/intro-idle.v1.webm",
+        "ended": false
+      },
+      "still": false,
+      "seen": "1"
+    },
+    "errors": []
+  },
+  "fail1080": {
+    "before": {
+      "mode": "scrub",
+      "quality": "720",
+      "frame": 0,
+      "decoded": 4,
+      "peakMiB": 14.1,
+      "scrollY": 0,
+      "aboutTop": 3150,
+      "video": {
+        "paused": false,
+        "loop": true,
+        "muted": true,
+        "t": 0.2481,
+        "src": "https://4a6a1a83.ai-trainer-site.pages.dev/media/intro/intro-idle.v1.webm",
+        "ended": false
+      },
+      "still": false,
+      "seen": null
+    },
+    "after": {
+      "mode": "scrub",
+      "quality": "720",
+      "frame": 121,
+      "decoded": 11,
+      "peakMiB": 73.8,
+      "scrollY": 2400,
+      "aboutTop": 750,
+      "video": {
+        "paused": true,
+        "loop": true,
+        "muted": true,
+        "t": 0.4627,
+        "src": "https://4a6a1a83.ai-trainer-site.pages.dev/media/intro/intro-idle.v1.webm",
+        "ended": false
+      },
+      "still": false,
+      "seen": "1"
+    },
+    "errors": [
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED"
+    ]
+  },
+  "failAllMedia": {
+    "before": {
+      "mode": "still",
+      "quality": "720",
+      "frame": -1,
+      "decoded": 0,
+      "peakMiB": 0,
+      "scrollY": 0,
+      "aboutTop": 900,
+      "video": null,
+      "still": true,
+      "seen": null
+    },
+    "after": null,
+    "errors": [
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED",
+      "Failed to load resource: net::ERR_FAILED"
+    ]
+  },
+  "autoplayRejected": {
+    "before": {
+      "mode": "scrub",
+      "quality": "1080",
+      "frame": 0,
+      "decoded": 5,
+      "peakMiB": 39.6,
+      "scrollY": 0,
+      "aboutTop": 3150,
+      "video": {
+        "paused": true,
+        "loop": true,
+        "muted": true,
+        "t": 1.0761,
+        "src": "https://4a6a1a83.ai-trainer-site.pages.dev/media/intro/intro-idle.v1.webm",
+        "ended": false
+      },
+      "still": false,
+      "seen": null
+    },
+    "after": true,
+    "errors": []
+  }
+}
