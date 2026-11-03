@@ -13,6 +13,8 @@ type Options = {
   canvas: RefObject<HTMLCanvasElement | null>;
   onActivate: () => void;
   onDowngrade: () => void;
+  /** Called once the pin exists, so layout (and #about offset) is final. */
+  onReady: () => void;
 };
 
 const LAST = MOTION.intro.frameCount - 1;
@@ -26,6 +28,7 @@ export function useScrub({
   canvas,
   onActivate,
   onDowngrade,
+  onReady,
 }: Options) {
   useEffect(() => {
     const el = stage.current;
@@ -56,7 +59,8 @@ export function useScrub({
       }
     };
     const tryActivate = (progress: number) => {
-      if (activated || progress <= 0 || !store.has(0)) return;
+      // Normally frame 0; on a return visit (landed on #about) whatever frame is current.
+      if (activated || progress <= 0 || !store.get(frame)) return;
       activated = true;
       onActivate();
     };
@@ -74,7 +78,9 @@ export function useScrub({
       gsap.registerPlugin(ScrollTrigger);
       const state = { frame: 0 };
       const deltas: number[] = [];
-      const tween = gsap.to(state, {
+      // Holder: gsap calls onUpdate during creation, before the tween is returned.
+      const ref: { tween?: gsap.core.Tween } = {};
+      ref.tween = gsap.to(state, {
         frame: LAST,
         ease: 'none',
         snap: { frame: 1 },
@@ -91,13 +97,13 @@ export function useScrub({
           frame = Math.round(state.frame);
           store.setCurrent(frame);
           draw();
-          tryActivate(tween.scrollTrigger?.progress ?? 0);
+          tryActivate(ref.tween?.scrollTrigger?.progress ?? 0);
         },
       });
       // Sustained frame drops while scrubbing → step down quality.
       const watch = (_t: number, delta: number) => {
-        if (!tween.scrollTrigger?.isActive || tween.scrollTrigger.getVelocity() === 0)
-          return;
+        const st = ref.tween?.scrollTrigger;
+        if (!st?.isActive || st.getVelocity() === 0) return;
         deltas.push(delta);
         if (deltas.length < DROP_WINDOW) return;
         const slow = deltas.filter((d) => d > 34).length;
@@ -106,10 +112,11 @@ export function useScrub({
       };
       gsap.ticker.add(watch);
       if (section) section.dataset.scrubReady = '1';
+      onReady();
       cleanup = () => {
         gsap.ticker.remove(watch);
-        tween.scrollTrigger?.kill();
-        tween.kill();
+        ref.tween?.scrollTrigger?.kill();
+        ref.tween?.kill();
       };
     })();
 

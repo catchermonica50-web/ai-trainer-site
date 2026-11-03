@@ -16,7 +16,7 @@ export function markIntroSeen() {
   }
 }
 
-export function jumpToAbout(smooth: boolean) {
+export function jumpToAbout(smooth = false) {
   const about = document.getElementById('about');
   if (!about) return;
   about.scrollIntoView({ behavior: smooth ? 'smooth' : 'instant', block: 'start' });

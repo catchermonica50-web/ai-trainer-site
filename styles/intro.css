@@ -1,5 +1,7 @@
 /* ---- Intro (stage 2) ---- */
 .intro-shell {
+  /* block, not flex: ScrollTrigger disables pinSpacing when the pin's parent is flex. */
+  display: block;
   position: relative;
   min-height: 100svh;
   padding: 0;

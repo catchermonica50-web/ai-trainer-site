@@ -16,14 +16,23 @@ export function IntroStage() {
   const canvas = useRef<HTMLCanvasElement>(null);
   const idle = useRef<HTMLVideoElement>(null);
   const [scrubbing, setScrubbing] = useState(false);
+  const scrubbingRef = useRef(false);
   const [needsPlay, setNeedsPlay] = useState(false);
   const [idleFailed, setIdleFailed] = useState(false);
 
   const activate = useCallback(() => {
+    scrubbingRef.current = true;
     setScrubbing(true);
     window.setTimeout(() => idle.current?.pause(), 200);
   }, []);
   const fail = useCallback(() => setIdleFailed(true), []);
+  const returnChecked = useRef(false);
+  // Only on first load: a later quality downgrade must not move the page.
+  const returnToAbout = useCallback(() => {
+    if (returnChecked.current) return;
+    returnChecked.current = true;
+    if (hasSeenIntro()) jumpToAbout(false);
+  }, []);
   useScrub({
     enabled: mode === 'scrub',
     quality,
@@ -31,19 +40,21 @@ export function IntroStage() {
     canvas,
     onActivate: activate,
     onDowngrade: downgrade,
+    onReady: returnToAbout,
   });
 
   useEffect(() => {
     if (mode === 'pending') return;
-    if (hasSeenIntro()) requestAnimationFrame(() => jumpToAbout(false));
+    // Scrub mode jumps from onReady, after the pin spacer changes the layout.
+    if (mode !== 'scrub') requestAnimationFrame(returnToAbout);
     const video = idle.current;
     if (!video) return;
     video.play().catch(() => setNeedsPlay(true));
-  }, [mode]);
+  }, [mode, returnToAbout]);
 
   const skip = () => {
     markIntroSeen();
-    jumpToAbout(mode !== 'still');
+    jumpToAbout(false);
   };
   const play = () => {
     idle.current
@@ -81,6 +92,11 @@ export function IntroStage() {
           poster={INTRO_MEDIA.poster.webp}
           aria-label={SITE.intro.idleLabel}
           onError={() => setIdleFailed(true)}
+          // Pinning re-parents the stage, which pauses media; keep the idle loop going.
+          onPause={(e) => {
+            if (!scrubbingRef.current && !e.currentTarget.ended)
+              void e.currentTarget.play().catch(() => {});
+          }}
         >
           <source src={INTRO_MEDIA.idle.webm} type="video/webm" />
           <source src={INTRO_MEDIA.idle.mp4} type="video/mp4" />
