@@ -1,0 +1,41 @@
+{
+ "all": {
+  "frames": 482,
+  "fpsMean": 32.1,
+  "fpsMedian": 41.2,
+  "fpsP5": 13.8,
+  "over34ms": 139
+ },
+ "byState": {
+  "scrub/1080": {
+   "frames": 215,
+   "fpsMean": 22.7,
+   "fpsMedian": 27.5,
+   "fpsP5": 12.7,
+   "over34ms": 133
+  },
+  "scrub/720": {
+   "frames": 267,
+   "fpsMean": 48.3,
+   "fpsMedian": 54.9,
+   "fpsP5": 33,
+   "over34ms": 6
+  }
+ },
+ "timeline": [
+  {
+   "t": 0,
+   "state": "scrub/1080"
+  },
+  {
+   "t": 9826,
+   "state": "scrub/720"
+  }
+ ],
+ "rate": 4,
+ "browser": "Chrome/156.0.8078.80",
+ "url": "https://d39c630d.ai-trainer-site.pages.dev/",
+ "screencastFrames": 787,
+ "errors": [],
+ "threshold": "useScrub.ts: while ScrollTrigger is active and moving, collect 90 gsap ticker deltas; if more than 45 of them exceed 34 ms, onDowngrade() steps 1080 → 720 → still"
+}

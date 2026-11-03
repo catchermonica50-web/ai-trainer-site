@@ -1,0 +1,98 @@
+{
+ "desktop-1.report.json": {
+  "perf": 96,
+  "a11y": 100,
+  "bp": 100,
+  "seo": 69,
+  "lcp": 711,
+  "cls": 0,
+  "tbt": 0,
+  "fcp": 511,
+  "ua": "Chrome/156.0.0.0",
+  "lh": "12.8.2",
+  "lcpEl": "div.pin-spacer > div.intro-stage > div.intro-copy > h1#intro-title",
+  "fail": [
+   "is-crawlable"
+  ]
+ },
+ "desktop-2.report.json": {
+  "perf": 97,
+  "a11y": 100,
+  "bp": 100,
+  "seo": 69,
+  "lcp": 729,
+  "cls": 0,
+  "tbt": 0,
+  "fcp": 529,
+  "ua": "Chrome/156.0.0.0",
+  "lh": "12.8.2",
+  "lcpEl": "div.pin-spacer > div.intro-stage > div.intro-copy > h1#intro-title",
+  "fail": [
+   "is-crawlable"
+  ]
+ },
+ "desktop-3.report.json": {
+  "perf": 95,
+  "a11y": 100,
+  "bp": 100,
+  "seo": 69,
+  "lcp": 636,
+  "cls": 0,
+  "tbt": 0,
+  "fcp": 516,
+  "ua": "Chrome/156.0.0.0",
+  "lh": "12.8.2",
+  "lcpEl": "div.pin-spacer > div.intro-stage > div.intro-copy > h1#intro-title",
+  "fail": [
+   "is-crawlable"
+  ]
+ },
+ "mobile-1.report.json": {
+  "perf": 95,
+  "a11y": 100,
+  "bp": 100,
+  "seo": 69,
+  "lcp": 2772,
+  "cls": 0,
+  "tbt": 18,
+  "fcp": 1486,
+  "ua": "Chrome/156.0.0.0",
+  "lh": "12.8.2",
+  "lcpEl": "section#intro > div.intro-stage > div.intro-copy > h1#intro-title",
+  "fail": [
+   "is-crawlable"
+  ]
+ },
+ "mobile-2.report.json": {
+  "perf": 95,
+  "a11y": 100,
+  "bp": 100,
+  "seo": 69,
+  "lcp": 2832,
+  "cls": 0,
+  "tbt": 19,
+  "fcp": 1482,
+  "ua": "Chrome/156.0.0.0",
+  "lh": "12.8.2",
+  "lcpEl": "section#intro > div.intro-stage > div.intro-copy > h1#intro-title",
+  "fail": [
+   "is-crawlable"
+  ]
+ },
+ "mobile-3.report.json": {
+  "perf": 93,
+  "a11y": 100,
+  "bp": 100,
+  "seo": 69,
+  "lcp": 2964,
+  "cls": 0,
+  "tbt": 10,
+  "fcp": 1614,
+  "ua": "Chrome/156.0.0.0",
+  "lh": "12.8.2",
+  "lcpEl": "section#intro > div.intro-stage > div.intro-copy > h1#intro-title",
+  "fail": [
+   "is-crawlable"
+  ]
+ }
+}
