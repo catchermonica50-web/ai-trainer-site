@@ -167,3 +167,12 @@ a {
     width: min(100% - 128px, 1280px);
   }
 }
+
+/* At fractional DPR (e.g. Windows 150%) ScrollTrigger sizes .pin-spacer to the rounded client
+   width (1431px vs a 1430.67px viewport), leaving a sub-pixel horizontal scroll. */
+html {
+  overflow-x: clip;
+}
+.pin-spacer {
+  max-width: 100%;
+}
