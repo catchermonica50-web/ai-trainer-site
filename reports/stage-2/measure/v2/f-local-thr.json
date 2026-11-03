@@ -1,0 +1,159 @@
+{
+  "summary": {
+    "url": "http://127.0.0.1:4310",
+    "waitBeforeScrollMs": 5000,
+    "throttle": "10000:150",
+    "runs": 3,
+    "medianLcpMs": 1360,
+    "lcpElements": [
+      "IMG:intro-poster.v1.avif",
+      "IMG:intro-poster.v1.avif",
+      "IMG:intro-poster.v1.avif"
+    ],
+    "medianMaxBehind": 4,
+    "medianMsBehind3": 31,
+    "medianFreezeMs": 68,
+    "medianMbps": 8.7,
+    "medianTtfb": 4
+  },
+  "runs": [
+    {
+      "run": 1,
+      "lcp": [
+        {
+          "t": 824,
+          "tag": "BUTTON",
+          "size": 1493,
+          "url": ""
+        },
+        {
+          "t": 1052,
+          "tag": "H1",
+          "size": 41340,
+          "url": ""
+        },
+        {
+          "t": 1348,
+          "tag": "IMG",
+          "size": 1260355,
+          "url": "intro-poster.v1.avif"
+        }
+      ],
+      "ttfb": 13,
+      "posterStart": 160,
+      "posterEnd": 427,
+      "posterBytes": 34607,
+      "kbytes5s": 6713,
+      "approxMbps": 8.7,
+      "finalLcp": {
+        "t": 1348,
+        "tag": "IMG",
+        "size": 1260355,
+        "url": "intro-poster.v1.avif"
+      },
+      "maxFramesBehind": 4,
+      "msMoreThan3Behind": 31,
+      "longestFreezeMs": 100,
+      "lastBehind1At": 726,
+      "maxScrubLag": 17,
+      "endState": [
+        7006,
+        121,
+        121,
+        121
+      ]
+    },
+    {
+      "run": 2,
+      "lcp": [
+        {
+          "t": 860,
+          "tag": "BUTTON",
+          "size": 1493,
+          "url": ""
+        },
+        {
+          "t": 1024,
+          "tag": "H1",
+          "size": 41340,
+          "url": ""
+        },
+        {
+          "t": 1360,
+          "tag": "IMG",
+          "size": 1260355,
+          "url": "intro-poster.v1.avif"
+        }
+      ],
+      "ttfb": 4,
+      "posterStart": 163,
+      "posterEnd": 432,
+      "posterBytes": 34607,
+      "kbytes5s": 6773,
+      "approxMbps": 8.7,
+      "finalLcp": {
+        "t": 1360,
+        "tag": "IMG",
+        "size": 1260355,
+        "url": "intro-poster.v1.avif"
+      },
+      "maxFramesBehind": 4,
+      "msMoreThan3Behind": 22,
+      "longestFreezeMs": 62,
+      "lastBehind1At": 755,
+      "maxScrubLag": 17,
+      "endState": [
+        7031,
+        121,
+        121,
+        121
+      ]
+    },
+    {
+      "run": 3,
+      "lcp": [
+        {
+          "t": 856,
+          "tag": "BUTTON",
+          "size": 1493,
+          "url": ""
+        },
+        {
+          "t": 1024,
+          "tag": "H1",
+          "size": 41340,
+          "url": ""
+        },
+        {
+          "t": 1388,
+          "tag": "IMG",
+          "size": 1260355,
+          "url": "intro-poster.v1.avif"
+        }
+      ],
+      "ttfb": 4,
+      "posterStart": 161,
+      "posterEnd": 439,
+      "posterBytes": 34607,
+      "kbytes5s": 6773,
+      "approxMbps": 8.6,
+      "finalLcp": {
+        "t": 1388,
+        "tag": "IMG",
+        "size": 1260355,
+        "url": "intro-poster.v1.avif"
+      },
+      "maxFramesBehind": 4,
+      "msMoreThan3Behind": 37,
+      "longestFreezeMs": 68,
+      "lastBehind1At": 771,
+      "maxScrubLag": 17,
+      "endState": [
+        7013,
+        121,
+        121,
+        121
+      ]
+    }
+  ]
+}

@@ -1,0 +1,159 @@
+{
+  "summary": {
+    "url": "https://0f55895c.ai-trainer-site.pages.dev",
+    "waitBeforeScrollMs": 5000,
+    "throttle": "none",
+    "runs": 3,
+    "medianLcpMs": 2116,
+    "lcpElements": [
+      "IMG:intro-poster.v1.avif",
+      "IMG:intro-poster.v1.avif",
+      "IMG:intro-poster.v1.avif"
+    ],
+    "medianMaxBehind": 4,
+    "medianMsBehind3": 37,
+    "medianFreezeMs": 189,
+    "medianMbps": 6.2,
+    "medianTtfb": 633
+  },
+  "runs": [
+    {
+      "run": 1,
+      "lcp": [
+        {
+          "t": 1732,
+          "tag": "BUTTON",
+          "size": 1493,
+          "url": ""
+        },
+        {
+          "t": 1920,
+          "tag": "H1",
+          "size": 41340,
+          "url": ""
+        },
+        {
+          "t": 3484,
+          "tag": "IMG",
+          "size": 1260355,
+          "url": "intro-poster.v1.avif"
+        }
+      ],
+      "ttfb": 785,
+      "posterStart": 793,
+      "posterEnd": 1081,
+      "posterBytes": 34607,
+      "kbytes5s": 6767,
+      "approxMbps": 6.9,
+      "finalLcp": {
+        "t": 3484,
+        "tag": "IMG",
+        "size": 1260355,
+        "url": "intro-poster.v1.avif"
+      },
+      "maxFramesBehind": 4,
+      "msMoreThan3Behind": 23,
+      "longestFreezeMs": 189,
+      "lastBehind1At": 741,
+      "maxScrubLag": 17,
+      "endState": [
+        7020,
+        121,
+        121,
+        121
+      ]
+    },
+    {
+      "run": 2,
+      "lcp": [
+        {
+          "t": 1552,
+          "tag": "BUTTON",
+          "size": 1493,
+          "url": ""
+        },
+        {
+          "t": 1796,
+          "tag": "H1",
+          "size": 41340,
+          "url": ""
+        },
+        {
+          "t": 2068,
+          "tag": "IMG",
+          "size": 1260355,
+          "url": "intro-poster.v1.avif"
+        }
+      ],
+      "ttfb": 609,
+      "posterStart": 617,
+      "posterEnd": 1335,
+      "posterBytes": 34607,
+      "kbytes5s": 5445,
+      "approxMbps": 6.2,
+      "finalLcp": {
+        "t": 2068,
+        "tag": "IMG",
+        "size": 1260355,
+        "url": "intro-poster.v1.avif"
+      },
+      "maxFramesBehind": 4,
+      "msMoreThan3Behind": 40,
+      "longestFreezeMs": 119,
+      "lastBehind1At": 704,
+      "maxScrubLag": 17,
+      "endState": [
+        6948,
+        121,
+        121,
+        121
+      ]
+    },
+    {
+      "run": 3,
+      "lcp": [
+        {
+          "t": 1480,
+          "tag": "BUTTON",
+          "size": 1493,
+          "url": ""
+        },
+        {
+          "t": 1676,
+          "tag": "H1",
+          "size": 41340,
+          "url": ""
+        },
+        {
+          "t": 2116,
+          "tag": "IMG",
+          "size": 1260355,
+          "url": "intro-poster.v1.avif"
+        }
+      ],
+      "ttfb": 633,
+      "posterStart": 639,
+      "posterEnd": 1259,
+      "posterBytes": 34607,
+      "kbytes5s": 5349,
+      "approxMbps": 6.2,
+      "finalLcp": {
+        "t": 2116,
+        "tag": "IMG",
+        "size": 1260355,
+        "url": "intro-poster.v1.avif"
+      },
+      "maxFramesBehind": 4,
+      "msMoreThan3Behind": 37,
+      "longestFreezeMs": 388,
+      "lastBehind1At": 763,
+      "maxScrubLag": 16,
+      "endState": [
+        7059,
+        121,
+        121,
+        121
+      ]
+    }
+  ]
+}

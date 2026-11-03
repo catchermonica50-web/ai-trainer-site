@@ -1,0 +1,135 @@
+{
+  "summary": {
+    "url": "https://b6b630c0.ai-trainer-site.pages.dev",
+    "waitBeforeScrollMs": 0,
+    "throttle": "none",
+    "runs": 3,
+    "medianLcpMs": 1692,
+    "lcpElements": [
+      "IMG:intro-poster.v1.avif",
+      "H1:",
+      "H1:"
+    ],
+    "medianMaxBehind": 97,
+    "medianMsBehind3": 882,
+    "medianFreezeMs": 294,
+    "medianMbps": 7.9,
+    "medianTtfb": 615
+  },
+  "runs": [
+    {
+      "run": 1,
+      "lcp": [
+        {
+          "t": 1304,
+          "tag": "H1",
+          "size": 41340,
+          "url": ""
+        },
+        {
+          "t": 1692,
+          "tag": "IMG",
+          "size": 1260355,
+          "url": "intro-poster.v1.avif"
+        }
+      ],
+      "ttfb": 615,
+      "posterStart": 620,
+      "posterEnd": 1088,
+      "posterBytes": 34607,
+      "kbytes5s": 543,
+      "approxMbps": 2.6,
+      "finalLcp": {
+        "t": 1692,
+        "tag": "IMG",
+        "size": 1260355,
+        "url": "intro-poster.v1.avif"
+      },
+      "maxFramesBehind": 121,
+      "msMoreThan3Behind": 882,
+      "longestFreezeMs": 669,
+      "lastBehind1At": 896,
+      "endState": [
+        6974,
+        121,
+        121
+      ]
+    },
+    {
+      "run": 2,
+      "lcp": [
+        {
+          "t": 1236,
+          "tag": "BUTTON",
+          "size": 1493,
+          "url": ""
+        },
+        {
+          "t": 1444,
+          "tag": "H1",
+          "size": 41340,
+          "url": ""
+        }
+      ],
+      "ttfb": 611,
+      "posterStart": 617,
+      "posterEnd": 878,
+      "posterBytes": 34607,
+      "kbytes5s": 2399,
+      "approxMbps": 9.2,
+      "finalLcp": {
+        "t": 1444,
+        "tag": "H1",
+        "size": 41340,
+        "url": ""
+      },
+      "maxFramesBehind": 73,
+      "msMoreThan3Behind": 930,
+      "longestFreezeMs": 294,
+      "lastBehind1At": 966,
+      "endState": [
+        6927,
+        121,
+        121
+      ]
+    },
+    {
+      "run": 3,
+      "lcp": [
+        {
+          "t": 1540,
+          "tag": "BUTTON",
+          "size": 1493,
+          "url": ""
+        },
+        {
+          "t": 1752,
+          "tag": "H1",
+          "size": 41340,
+          "url": ""
+        }
+      ],
+      "ttfb": 624,
+      "posterStart": 629,
+      "posterEnd": 1023,
+      "posterBytes": 34607,
+      "kbytes5s": 2454,
+      "approxMbps": 7.9,
+      "finalLcp": {
+        "t": 1752,
+        "tag": "H1",
+        "size": 41340,
+        "url": ""
+      },
+      "maxFramesBehind": 97,
+      "msMoreThan3Behind": 810,
+      "longestFreezeMs": 222,
+      "lastBehind1At": 850,
+      "endState": [
+        6921,
+        121,
+        121
+      ]
+    }
+  ]
+}
