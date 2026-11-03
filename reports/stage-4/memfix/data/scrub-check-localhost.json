@@ -1,0 +1,21 @@
+{
+ "samples": 490,
+ "blankSamples": 0,
+ "undrawnSamples": 0,
+ "distinctFramesShown": 121,
+ "maxFrameMinusTarget": 8,
+ "fpsMean": 108.6,
+ "fpsP5": 64.9,
+ "intervalsOver34ms": 2,
+ "intervals": 1071,
+ "devCounter": {
+  "peak": 17,
+  "maxSeenPerFrame": 17,
+  "now": 9
+ },
+ "datasetDecoded": "9",
+ "mode": "scrub",
+ "browser": "Chrome/156.0.8078.80",
+ "url": "http://localhost:4500/",
+ "errors": []
+}

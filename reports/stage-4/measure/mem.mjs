@@ -46,8 +46,10 @@ for (let y = end; y > 0; y -= 40) { await p.mouse.wheel({ deltaY: -40 }); await 
 await sleep(800);
 mark('scrubEnd');
 const frameState = await p.evaluate(() => ({ scrollY, mode: document.querySelector('[data-mode]')?.dataset.mode ?? null }));
-await sleep(5000); mark('afterEnd');
+await sleep(11000); mark('afterEnd');
 await p.screenshot({ path: path.join(OUT, 'mem-after.png') });
+// Task Manager window: flag file tells the PowerShell driver which browser PID to focus for Shift+Esc.
+if (process.env.TM_WAIT) { fs.writeFileSync(path.join(OUT, 'tm-ready.txt'), String(b.process().pid)); await sleep(+process.env.TM_WAIT); }
 sampler.kill();
 await sleep(500);
 const rows = fs.readFileSync(csv, 'utf8').trim().split(/\r?\n/).slice(1).map((l) => l.split(',').map(Number));
@@ -59,12 +61,14 @@ for (const pid of [...gpu, ...renderers]) {
   if (!all.length) continue;
   const before = sum(marks.scrubStart - 4000, marks.scrubStart, pid);
   const during = sum(marks.scrubStart, marks.scrubEnd, pid);
-  const after = sum(marks.scrubEnd + 3000, marks.afterEnd, pid);
+  const after = sum(marks.scrubEnd + 9500, marks.afterEnd, pid);
   const col = (set, i, f) => (set.length ? f(...set.map((r) => r[i])) : null);
   const stat = (i) => ({ before: col(before, i, Math.max), peak: col(during, i, Math.max), after: col(after, i, Math.max),
     increase: col(during, i, Math.max) !== null && col(before, i, Math.max) !== null ? +(col(during, i, Math.max) - col(before, i, Math.max)).toFixed(1) : null });
   report.per[pid] = { type: gpu.includes(pid) ? 'GPU' : 'renderer', samples: all.length, privateMB: stat(2), workingSetMB: stat(3), gpuDedicatedMB: stat(4), gpuSharedMB: stat(5) };
 }
+const tot = (k, f) => +Object.values(report.per).reduce((a, v) => a + (v[f][k] ?? 0), 0).toFixed(1);
+report.total = Object.fromEntries(['privateMB', 'gpuSharedMB', 'gpuDedicatedMB'].map((f) => [f, { before: tot('before', f), peak: tot('peak', f), after10s: tot('after', f) }]));
 fs.writeFileSync(path.join(OUT, 'mem.json'), JSON.stringify(report, null, 1));
 console.log(JSON.stringify(report, null, 1));
 await b.close();

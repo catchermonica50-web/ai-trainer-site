@@ -1,0 +1,17 @@
+{
+ "samples": 514,
+ "blankSamples": 0,
+ "undrawnSamples": 0,
+ "distinctFramesShown": 121,
+ "maxFrameMinusTarget": 8,
+ "fpsMean": 111.9,
+ "fpsP5": 64.1,
+ "intervalsOver34ms": 2,
+ "intervals": 1112,
+ "devCounter": null,
+ "datasetDecoded": null,
+ "mode": "scrub",
+ "browser": "Chrome/156.0.8078.80",
+ "url": "https://1ebf15fa.ai-trainer-site.pages.dev/",
+ "errors": []
+}
