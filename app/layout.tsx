@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { JetBrains_Mono, Noto_Sans_SC, Orbitron, Rajdhani } from 'next/font/google';
 import { SITE } from '@/content/site';
 import '@/styles/globals.css';
+import '@/styles/intro.css';
 
 const ORBITRON = Orbitron({
   subsets: ['latin'],

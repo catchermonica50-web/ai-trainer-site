@@ -8,6 +8,11 @@ export const SITE = {
     title: 'AI TRAINER',
     scroll: '向下滚动',
     skip: '跳过开场',
+    play: '播放开场',
+    posterAlt: '待机中的机甲跑车，开场视频首帧',
+    stillAlt: '变身完成的机器人正面站立定格图',
+    idleLabel: '开场待机循环视频：机甲跑车静置待命',
+    transformLabel: '开场变身动画：跑车变形为机器人',
   },
   nav: [
     { id: 'intro', label: '开场' },

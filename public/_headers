@@ -1,5 +1,11 @@
+# Short cache for unversioned media.
 /media/*
   Cache-Control: public, max-age=3600, must-revalidate
+
+# Every file under /media/intro/ carries a version in its name (or its folder name); replacing an asset means a new name.
+/media/intro/*
+  ! Cache-Control
+  Cache-Control: public, max-age=31536000, immutable
 
 /_next/static/*
   Cache-Control: public, max-age=31536000, immutable
