@@ -51,11 +51,13 @@ const railBox = (p) => p.evaluate(() => { const r = document.querySelector('[dat
   const t0 = await rail(p);
   await swipe(b.x + b.w / 2, b.y + b.h / 2, 0, -300);
   const t1 = await rail(p);
+  await toWork(p); // bring the rail back to the middle before the horizontal swipe
+  const t1b = await rail(p);
   const b2 = await railBox(p);
   await swipe(b2.x + b2.w * 0.8, b2.y + b2.h / 2, -220, 0);
   const t2 = await rail(p);
   const fx = await p.evaluate(() => { const c = document.querySelector('[data-work-card]'); return { tiltAttr: c.hasAttribute('data-tilt'), hoverFine: matchMedia('(hover: hover) and (pointer: fine)').matches, touchAction: getComputedStyle(document.querySelector('[data-work-rail]')).touchAction }; });
-  R.touch = { before: t0, afterVerticalSwipe: t1, afterHorizontalSwipe: t2, pageScrolledBy: t1.y - t0.y, railMovedOnVertical: t1.x - t0.x, railMovedOnHorizontal: t2.x - t1.x, pageMovedOnHorizontal: t2.y - t1.y, ...fx };
+  R.touch = { before: t0, afterVerticalSwipe: t1, afterHorizontalSwipe: t2, pageScrolledBy: t1.y - t0.y, railMovedOnVertical: t1.x - t0.x, railMovedOnHorizontal: t2.x - t1b.x, pageMovedOnHorizontal: t2.y - t1b.y, ...fx };
   await shot(p, 'touch-rail.png');
   await ctx.close();
 }

@@ -1,0 +1,139 @@
+{
+ "browser": "Chrome/156.0.8078.80",
+ "url": "https://ai-trainer-site.pages.dev/",
+ "pids": {
+  "gpu": [
+   19708
+  ],
+  "renderers": [
+   12116,
+   22936,
+   22548
+  ]
+ },
+ "marks": {
+  "beforeEnd": 1793707726314,
+  "scrubStart": 1793707726800,
+  "scrubEnd": 1793707736054,
+  "afterEnd": 1793707741059
+ },
+ "frameState": {
+  "scrollY": 0,
+  "mode": "scrub"
+ },
+ "method": "Get-Process PrivateMemorySize64 (≈ Chrome task manager \"memory footprint\" on Windows) and WorkingSet64 per PID every loop; GPU memory = Windows perf counters \\GPU Process Memory(pid_*)\\Dedicated/Shared Usage. PIDs from CDP SystemInfo.getProcessInfo.",
+ "per": {
+  "12116": {
+   "type": "renderer",
+   "samples": 17,
+   "privateMB": {
+    "before": 17,
+    "peak": 17,
+    "after": 17,
+    "increase": 0
+   },
+   "workingSetMB": {
+    "before": 32.3,
+    "peak": 32.3,
+    "after": 32.3,
+    "increase": 0
+   },
+   "gpuDedicatedMB": {
+    "before": 0,
+    "peak": 0,
+    "after": 0,
+    "increase": 0
+   },
+   "gpuSharedMB": {
+    "before": 0,
+    "peak": 0,
+    "after": 0,
+    "increase": 0
+   }
+  },
+  "19708": {
+   "type": "GPU",
+   "samples": 17,
+   "privateMB": {
+    "before": 614.7,
+    "peak": 1086.1,
+    "after": 1085.8,
+    "increase": 471.4
+   },
+   "workingSetMB": {
+    "before": 656.8,
+    "peak": 1128.5,
+    "after": 1132.7,
+    "increase": 471.7
+   },
+   "gpuDedicatedMB": {
+    "before": 0,
+    "peak": 0,
+    "after": 0,
+    "increase": 0
+   },
+   "gpuSharedMB": {
+    "before": 556.2,
+    "peak": 1061.1,
+    "after": 1017.6,
+    "increase": 504.9
+   }
+  },
+  "22548": {
+   "type": "renderer",
+   "samples": 17,
+   "privateMB": {
+    "before": 43.1,
+    "peak": 43.1,
+    "after": 37.7,
+    "increase": 0
+   },
+   "workingSetMB": {
+    "before": 83.6,
+    "peak": 83.6,
+    "after": 80.6,
+    "increase": 0
+   },
+   "gpuDedicatedMB": {
+    "before": 0,
+    "peak": 0,
+    "after": 0,
+    "increase": 0
+   },
+   "gpuSharedMB": {
+    "before": 0,
+    "peak": 0,
+    "after": 0,
+    "increase": 0
+   }
+  },
+  "22936": {
+   "type": "renderer",
+   "samples": 17,
+   "privateMB": {
+    "before": 226.9,
+    "peak": 228.7,
+    "after": 149.5,
+    "increase": 1.8
+   },
+   "workingSetMB": {
+    "before": 302.8,
+    "peak": 304.2,
+    "after": 228.2,
+    "increase": 1.4
+   },
+   "gpuDedicatedMB": {
+    "before": 0,
+    "peak": 0,
+    "after": 0,
+    "increase": 0
+   },
+   "gpuSharedMB": {
+    "before": 0,
+    "peak": 0,
+    "after": 0,
+    "increase": 0
+   }
+  }
+ }
+}

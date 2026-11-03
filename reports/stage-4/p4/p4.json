@@ -1,0 +1,455 @@
+{
+ "browser": "Chrome/156.0.8078.80",
+ "base": "https://6f6c910f.ai-trainer-site.pages.dev",
+ "touch": {
+  "before": {
+   "x": 0,
+   "max": 893,
+   "y": 2604,
+   "prevDisabled": true,
+   "nextDisabled": false,
+   "url": "/"
+  },
+  "afterVerticalSwipe": {
+   "x": 0,
+   "max": 893,
+   "y": 2957,
+   "prevDisabled": true,
+   "nextDisabled": false,
+   "url": "/"
+  },
+  "afterHorizontalSwipe": {
+   "x": 220,
+   "max": 893,
+   "y": 2604,
+   "prevDisabled": false,
+   "nextDisabled": false,
+   "url": "/"
+  },
+  "pageScrolledBy": 353,
+  "railMovedOnVertical": 0,
+  "railMovedOnHorizontal": 220,
+  "pageMovedOnHorizontal": 0,
+  "tiltAttr": false,
+  "hoverFine": false,
+  "touchAction": "pan-y"
+ },
+ "drag": {
+  "before": {
+   "x": 0,
+   "max": 687,
+   "y": 4496,
+   "prevDisabled": true,
+   "nextDisabled": false,
+   "url": "/"
+  },
+  "afterDrag80px": {
+   "x": 80,
+   "max": 687,
+   "y": 4496,
+   "prevDisabled": false,
+   "nextDisabled": false,
+   "url": "/"
+  },
+  "navigatedAfterDrag": false,
+  "click4px": {
+   "leaving": {
+    "opacity": "0.104691",
+    "transform": "matrix3d(1.02975, -3.08054e-08, 7.59996e-05, 0, 1.82389e-08, 1.02975, 0.000170268, 0, -7.38038e-05, -0.000165349, 1, 0, 0, 0, 0, 1)"
+   },
+   "detail": {
+    "url": "/work/rlhf-preference-data",
+    "anim": "work-enter",
+    "opacity": "0.905411"
+   }
+  }
+ },
+ "buttons": {
+  "steps": [
+   {
+    "x": 0,
+    "max": 687,
+    "y": 4496,
+    "prevDisabled": true,
+    "nextDisabled": false,
+    "url": "/"
+   },
+   {
+    "x": 498,
+    "max": 687,
+    "y": 4496,
+    "prevDisabled": false,
+    "nextDisabled": false,
+    "url": "/"
+   },
+   {
+    "x": 687,
+    "max": 687,
+    "y": 4496,
+    "prevDisabled": false,
+    "nextDisabled": true,
+    "url": "/"
+   }
+  ],
+  "atEnd": {
+   "x": 687,
+   "max": 687,
+   "y": 4496,
+   "prevDisabled": false,
+   "nextDisabled": true,
+   "url": "/"
+  },
+  "afterPrev": {
+   "x": 189,
+   "max": 687,
+   "y": 4496,
+   "prevDisabled": false,
+   "nextDisabled": false,
+   "url": "/"
+  }
+ },
+ "wheel": {
+  "start": {
+   "x": 0,
+   "max": 687,
+   "y": 4496,
+   "prevDisabled": true,
+   "nextDisabled": false,
+   "url": "/"
+  },
+  "afterWheelMid": {
+   "x": 180,
+   "max": 687,
+   "y": 4496,
+   "prevDisabled": false,
+   "nextDisabled": false,
+   "url": "/"
+  },
+  "atEnd": {
+   "x": 687,
+   "max": 687,
+   "y": 4496,
+   "prevDisabled": false,
+   "nextDisabled": true,
+   "url": "/"
+  },
+  "afterWheelAtEnd": {
+   "x": 687,
+   "max": 687,
+   "y": 4616,
+   "prevDisabled": false,
+   "nextDisabled": true,
+   "url": "/"
+  }
+ },
+ "keys": {
+  "start": {
+   "x": 0,
+   "max": 687,
+   "y": 4616,
+   "prevDisabled": true,
+   "nextDisabled": false,
+   "url": "/"
+  },
+  "arrowWithoutFocus": {
+   "x": 0,
+   "max": 687,
+   "y": 4616,
+   "prevDisabled": true,
+   "nextDisabled": false,
+   "url": "/"
+  },
+  "arrowWithRailFocus": {
+   "x": 498,
+   "max": 687,
+   "y": 4616,
+   "prevDisabled": false,
+   "nextDisabled": false,
+   "url": "/"
+  },
+  "focused": "work-rail"
+ },
+ "hover": {
+  "tiltAttr": true,
+  "rx": "3.60deg",
+  "ry": "4.20deg",
+  "transform": "matrix3d(0.997314, 0.00459866, -0.0730937, 0, 0, 0.998027, 0.0627905, 0, 0.0732382, -0.0626219, 0.995347, 0, 0, 0, 0, 1)",
+  "scanOpacity": "1",
+  "cursorView": "1"
+ },
+ "return_back-link": {
+  "saved": {
+   "x": 498,
+   "max": 687,
+   "y": 4496,
+   "prevDisabled": false,
+   "nextDisabled": false,
+   "url": "/"
+  },
+  "opened": "/work/safety-red-teaming",
+  "restored": {
+   "x": 498,
+   "max": 687,
+   "y": 4496,
+   "prevDisabled": false,
+   "nextDisabled": false,
+   "url": "/"
+  },
+  "dy": 0,
+  "dx": 0,
+  "introInView": false
+ },
+ "return_history-back": {
+  "saved": {
+   "x": 498,
+   "max": 687,
+   "y": 4496,
+   "prevDisabled": false,
+   "nextDisabled": false,
+   "url": "/"
+  },
+  "opened": "/work/safety-red-teaming",
+  "restored": {
+   "x": 498,
+   "max": 687,
+   "y": 4496,
+   "prevDisabled": false,
+   "nextDisabled": false,
+   "url": "/"
+  },
+  "dy": 0,
+  "dx": 0,
+  "introInView": false
+ },
+ "desktopErrors": [],
+ "homeCards": [
+  {
+   "href": "/work/rlhf-preference-data",
+   "sample": "示例"
+  },
+  {
+   "href": "/work/prompt-eval-benchmark",
+   "sample": "示例"
+  },
+  {
+   "href": "/work/multimodal-annotation-guide",
+   "sample": "示例"
+  },
+  {
+   "href": "/work/safety-red-teaming",
+   "sample": "示例"
+  }
+ ],
+ "details": [
+  {
+   "path": "/work/rlhf-preference-data",
+   "h1Count": 1,
+   "h1": "对话模型偏好数据集",
+   "sample": "示例",
+   "sections": [
+    "背景",
+    "我的工作",
+    "方法",
+    "结果"
+   ],
+   "sentences": [
+    3,
+    2,
+    3,
+    2
+   ],
+   "metrics": [
+    "[X]万 条标注",
+    "[X]%",
+    "[X] 轮"
+   ],
+   "meta": [
+    "标注规范设计 / 质检负责人",
+    "[YYYY.MM–YYYY.MM]",
+    "RLHF数据标注质检"
+   ],
+   "coverLoaded": 1280,
+   "jsonLd": true,
+   "strayDigits": [],
+   "prev": {
+    "tag": "SPAN",
+    "disabled": true,
+    "href": null
+   },
+   "next": {
+    "tag": "A",
+    "disabled": false,
+    "href": "/work/prompt-eval-benchmark"
+   },
+   "back": 3
+  },
+  {
+   "path": "/work/prompt-eval-benchmark",
+   "h1Count": 1,
+   "h1": "提示词评测基准",
+   "sample": "示例",
+   "sections": [
+    "背景",
+    "我的工作",
+    "方法",
+    "结果"
+   ],
+   "sentences": [
+    2,
+    2,
+    3,
+    2
+   ],
+   "metrics": [
+    "[X] 个",
+    "[X]%"
+   ],
+   "meta": [
+    "评测设计 / 提示词工程",
+    "[YYYY.MM–YYYY.MM]",
+    "评测Prompt自动评分"
+   ],
+   "coverLoaded": 1280,
+   "jsonLd": true,
+   "strayDigits": [],
+   "prev": {
+    "tag": "A",
+    "disabled": false,
+    "href": "/work/rlhf-preference-data"
+   },
+   "next": {
+    "tag": "A",
+    "disabled": false,
+    "href": "/work/multimodal-annotation-guide"
+   },
+   "back": 3
+  },
+  {
+   "path": "/work/multimodal-annotation-guide",
+   "h1Count": 1,
+   "h1": "多模态图文标注规范",
+   "sample": "示例",
+   "sections": [
+    "背景",
+    "我的工作",
+    "方法",
+    "结果"
+   ],
+   "sentences": [
+    2,
+    2,
+    3,
+    2
+   ],
+   "metrics": [
+    "[X]万 组",
+    "[X]%"
+   ],
+   "meta": [
+    "标注规范负责人",
+    "[YYYY.MM–YYYY.MM]",
+    "多模态标注规范一致性"
+   ],
+   "coverLoaded": 1280,
+   "jsonLd": true,
+   "strayDigits": [],
+   "prev": {
+    "tag": "A",
+    "disabled": false,
+    "href": "/work/prompt-eval-benchmark"
+   },
+   "next": {
+    "tag": "A",
+    "disabled": false,
+    "href": "/work/safety-red-teaming"
+   },
+   "back": 3
+  },
+  {
+   "path": "/work/safety-red-teaming",
+   "h1Count": 1,
+   "h1": "模型安全红队测试",
+   "sample": "示例",
+   "sections": [
+    "背景",
+    "我的工作",
+    "方法",
+    "结果"
+   ],
+   "sentences": [
+    2,
+    2,
+    3,
+    2
+   ],
+   "metrics": [
+    "[X] 条",
+    "[X] 个",
+    "[X]%"
+   ],
+   "meta": [
+    "红队测试设计 / 风险评估",
+    "[YYYY.MM–YYYY.MM]",
+    "安全红队风险评估"
+   ],
+   "coverLoaded": 1280,
+   "jsonLd": true,
+   "strayDigits": [],
+   "prev": {
+    "tag": "A",
+    "disabled": false,
+    "href": "/work/multimodal-annotation-guide"
+   },
+   "next": {
+    "tag": "SPAN",
+    "disabled": true,
+    "href": null
+   },
+   "back": 3
+  }
+ ],
+ "enable": [
+  {
+   "name": "1440 fine pointer (control)",
+   "state": "ready",
+   "canvas": true,
+   "backdropRequests": [
+    "/media/fx/mech-points.v1.bin"
+   ],
+   "errors": []
+  },
+  {
+   "name": "1023 fine pointer",
+   "state": "off",
+   "canvas": false,
+   "backdropRequests": [],
+   "errors": []
+  },
+  {
+   "name": "1440 reduced-motion",
+   "state": "off",
+   "canvas": false,
+   "backdropRequests": [],
+   "errors": []
+  },
+  {
+   "name": "1440 touch (hasTouch+isMobile)",
+   "state": "off",
+   "canvas": false,
+   "backdropRequests": [],
+   "errors": []
+  }
+ ],
+ "noWebgl": {
+  "webgl": false,
+  "webgl2": false,
+  "bodyBg": "rgba(0, 0, 0, 0)",
+  "h2": "TRAINING MACHINES TO THINK BETTER.",
+  "aboutVisible": true,
+  "state": "failed",
+  "canvas": false,
+  "introCanvas": true,
+  "backdropRequests": [],
+  "errors": []
+ }
+}

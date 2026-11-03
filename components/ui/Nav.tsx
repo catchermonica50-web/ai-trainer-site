@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { SITE } from '@/content/site';
 import { Magnetic } from './Magnetic';
@@ -10,6 +11,7 @@ export function Nav() {
   const [current, setCurrent] = useState<string>(SITE.nav[0].id);
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -18,6 +20,8 @@ export function Nav() {
     const sections = SITE.nav
       .map((n) => document.getElementById(n.id))
       .filter((el): el is HTMLElement => !!el);
+    // Work detail pages belong to 作品集; the home sections are re-observed after returning.
+    if (pathname.startsWith('/work/')) setCurrent('work');
     const io = new IntersectionObserver(
       (entries) => {
         for (const e of entries) if (e.isIntersecting) setCurrent(e.target.id);
@@ -29,7 +33,7 @@ export function Nav() {
       window.removeEventListener('scroll', onScroll);
       io.disconnect();
     };
-  }, []);
+  }, [pathname]);
 
   useEffect(() => {
     document.documentElement.classList.toggle('menu-open', open);
