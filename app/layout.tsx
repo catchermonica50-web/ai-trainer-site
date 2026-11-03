@@ -1,6 +1,9 @@
 import type { Metadata } from 'next';
-import { JetBrains_Mono, Noto_Sans_SC, Orbitron, Rajdhani } from 'next/font/google';
+import { preload } from 'react-dom';
+import { JetBrains_Mono, Orbitron, Rajdhani } from 'next/font/google';
+import { NOTO_FIRST_URL } from '@/lib/fonts.generated';
 import { SITE } from '@/content/site';
+import '@/styles/fonts.generated.css';
 import '@/styles/globals.css';
 import '@/styles/intro.css';
 import '@/styles/sections.css';
@@ -18,12 +21,6 @@ const RAJDHANI = Rajdhani({
   weight: ['500', '600'],
   display: 'swap',
   variable: '--font-rajdhani',
-});
-const NOTO = Noto_Sans_SC({
-  subsets: ['latin'],
-  weight: ['400', '500'],
-  display: 'swap',
-  variable: '--font-noto',
 });
 const MONO = JetBrains_Mono({
   subsets: ['latin'],
@@ -50,10 +47,12 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
+  // Only the first-screen Noto subset is preloaded; the rest loads when a glyph needs it.
+  preload(NOTO_FIRST_URL, { as: 'font', type: 'font/woff2', crossOrigin: 'anonymous' });
   return (
     <html
       lang="zh-CN"
-      className={`${ORBITRON.variable} ${RAJDHANI.variable} ${NOTO.variable} ${MONO.variable}`}
+      className={`${ORBITRON.variable} ${RAJDHANI.variable} ${MONO.variable}`}
     >
       <body>
         <a href="#main" className="skip-link">

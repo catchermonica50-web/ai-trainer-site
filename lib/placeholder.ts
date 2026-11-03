@@ -1,9 +1,9 @@
 const PROD = process.env.NODE_ENV === 'production';
 
-/** Empty, or still holds a template marker such as [X], [email] or [链接待定]. */
+/** Empty, or still holds a [..] template marker such as [X], [ID], [email] or [链接待定]. */
 export function isPlaceholder(value: string | undefined | null): boolean {
   const v = (value ?? '').trim();
-  return v === '' || v.includes('[X]') || /^\[[^\]]*\]$/.test(v);
+  return v === '' || /\[[^\]]*\]/.test(v);
 }
 
 /**

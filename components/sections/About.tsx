@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/Button';
 import { Tag } from '@/components/ui/Tag';
 import { IntroPicture } from './intro/IntroPicture';
 import { shown } from '@/lib/placeholder';
+import { CONTACT_VISIBLE } from '@/lib/sections';
 
 /** Video end-frame robot in the middle, copy on either side; stacked on mobile. */
 export function About() {
@@ -15,9 +16,12 @@ export function About() {
       <RobotBackdrop />
       <div className="about-grid">
         <div className="about-copy about-left reveal">
-          <Tag>{about.eyebrow}</Tag>
+          <Tag>{shown(about.id) ? `${about.id} ${about.eyebrow}` : about.eyebrow}</Tag>
           <h2 id="about-title">{about.title}</h2>
-          <p className="about-desc">{about.description}</p>
+          <p className="about-desc">
+            {shown(about.name) ? about.greeting(about.name) : about.greetingNoName}
+            {about.description}
+          </p>
         </div>
         <div className="about-figure">
           <IntroPicture
@@ -35,7 +39,7 @@ export function About() {
             </ul>
           )}
           <div className="about-actions">
-            <Button href="#contact">{about.cta}</Button>
+            {CONTACT_VISIBLE && <Button href="#contact">{about.cta}</Button>}
             <Button href="#skills" variant="secondary">
               {about.ctaSecondary}
             </Button>

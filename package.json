@@ -17,31 +17,34 @@
     "typecheck": "tsc --noEmit",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "check": "npm run lint && npm run format:check && npm run typecheck"
+    "check": "npm run lint && npm run format:check && npm run typecheck",
+    "prebuild": "node --no-warnings scripts/subset-fonts.mjs",
+    "fonts": "node --no-warnings scripts/subset-fonts.mjs"
   },
   "dependencies": {
+    "@react-three/drei": "10.7.9",
+    "@react-three/fiber": "9.8.2",
+    "gsap": "3.15.0",
+    "motion": "12.43.0",
     "next": "15.5.28",
     "react": "19.3.1",
     "react-dom": "19.3.1",
-    "three": "0.187.0",
-    "@react-three/fiber": "9.8.2",
-    "@react-three/drei": "10.7.9",
-    "gsap": "3.15.0",
-    "motion": "12.43.0"
+    "three": "0.187.0"
   },
   "devDependencies": {
-    "typescript": "5.9.3",
-    "tailwindcss": "4.3.4",
-    "@tailwindcss/postcss": "4.3.4",
-    "eslint": "10.14.0",
     "@eslint/js": "10.0.1",
-    "typescript-eslint": "8.72.1",
     "@next/eslint-plugin-next": "15.5.28",
-    "eslint-config-prettier": "10.1.8",
-    "prettier": "3.9.10",
+    "@tailwindcss/postcss": "4.3.4",
     "@types/node": "24.19.2",
     "@types/react": "19.3.0",
     "@types/react-dom": "19.3.0",
-    "@types/three": "0.187.0"
+    "@types/three": "0.187.0",
+    "eslint": "10.14.0",
+    "eslint-config-prettier": "10.1.8",
+    "prettier": "3.9.10",
+    "subset-font": "2.9.0",
+    "tailwindcss": "4.3.4",
+    "typescript": "5.9.3",
+    "typescript-eslint": "8.72.1"
   }
 }

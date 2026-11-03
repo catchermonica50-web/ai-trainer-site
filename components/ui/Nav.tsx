@@ -4,11 +4,12 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { SITE } from '@/content/site';
+import { NAV_ITEMS } from '@/lib/sections';
 import { Magnetic } from './Magnetic';
 
 /** Fixed thin top bar: anchors, current-section indicator, blur after scroll, mobile full-screen menu. */
 export function Nav() {
-  const [current, setCurrent] = useState<string>(SITE.nav[0].id);
+  const [current, setCurrent] = useState<string>(NAV_ITEMS[0].id);
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
@@ -17,9 +18,9 @@ export function Nav() {
     const onScroll = () => setScrolled(window.scrollY > 8);
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
-    const sections = SITE.nav
-      .map((n) => document.getElementById(n.id))
-      .filter((el): el is HTMLElement => !!el);
+    const sections = NAV_ITEMS.map((n) => document.getElementById(n.id)).filter(
+      (el): el is HTMLElement => !!el,
+    );
     // Work detail pages belong to 作品集; the home sections are re-observed after returning.
     if (pathname.startsWith('/work/')) setCurrent('work');
     const io = new IntersectionObserver(
@@ -60,7 +61,7 @@ export function Nav() {
       </button>
       <nav id="nav-menu" aria-label={SITE.navLabel} data-open={open ? '1' : undefined}>
         <ul className="nav-list">
-          {SITE.nav.map((item) => (
+          {NAV_ITEMS.map((item) => (
             <li key={item.id}>
               <Magnetic>
                 <Link

@@ -25,6 +25,11 @@
   ! Cache-Control
   Cache-Control: public, max-age=31536000, immutable
 
+# Content-hashed font subsets (scripts/subset-fonts.mjs).
+/fonts/*
+  ! Cache-Control
+  Cache-Control: public, max-age=31536000, immutable
+
 # Content-hashed build output.
 /_next/static/*
   ! Cache-Control

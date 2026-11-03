@@ -10,6 +10,13 @@
   --line: rgba(201, 209, 217, 0.12);
 }
 
+:root {
+  /* Build-time Noto SC subsets (scripts/subset-fonts.mjs), then the system CJK stack. */
+  --font-noto:
+    'Noto SC First', 'Noto SC', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei',
+    'Noto Sans CJK SC', system-ui, sans-serif;
+}
+
 @theme inline {
   --color-bg: var(--bg);
   --color-panel: var(--panel);

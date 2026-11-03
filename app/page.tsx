@@ -4,6 +4,7 @@ import { Skills } from '@/components/sections/Skills';
 import { Work } from '@/components/sections/Work';
 import { Contact } from '@/components/sections/Contact';
 import { Footer } from '@/components/sections/Footer';
+import { CONTACT_VISIBLE } from '@/lib/sections';
 
 export default function HomePage() {
   return (
@@ -13,7 +14,7 @@ export default function HomePage() {
         <About />
         <Skills />
         <Work />
-        <Contact />
+        {CONTACT_VISIBLE && <Contact />}
       </main>
       <Footer />
     </>

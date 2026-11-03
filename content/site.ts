@@ -29,10 +29,15 @@ export const SITE = {
   ],
   about: {
     title: 'TRAINING MACHINES TO THINK BETTER.',
+    /** Shown only when filled (placeholder rule): name in the greeting, id before the eyebrow. */
+    name: 'Trotter',
+    id: '[ID]',
+    greeting: (name: string) => `你好，我是 ${name}，一名 AI 训练师。`,
+    greetingNoName: '你好，我是一名 AI 训练师。',
     description:
-      '你好，我是 [姓名]，一名 AI 训练师。我的工作是教模型理解人类的意图：整理数据、设计提示词、评估回答，再把反馈变成更好的模型。',
+      '我的工作是教模型理解人类的意图：整理数据、设计提示词、评估回答，再把反馈变成更好的模型。',
     stats: ['[X]+ 个项目', '[X] 万+ 条标注数据', '[X]+ 个评测任务', '[X] 年经验'],
-    eyebrow: '[ID] AI TRAINER',
+    eyebrow: 'AI TRAINER',
     statsLabel: '数据概览',
     robotAlt: '变身完成的机器人正面站立，位于「关于我」中央',
     cta: '联系我',
