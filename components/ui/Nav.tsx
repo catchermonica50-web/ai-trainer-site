@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { SITE } from '@/content/site';
 import { Magnetic } from './Magnetic';
@@ -40,9 +41,9 @@ export function Nav() {
 
   return (
     <header className="site-nav" data-scrolled={scrolled ? '1' : undefined}>
-      <a href="#intro" className="nav-brand" data-cursor="hover">
+      <Link href="/#intro" className="nav-brand" data-cursor="hover">
         {SITE.brand}
-      </a>
+      </Link>
       <button
         type="button"
         className="nav-toggle"
@@ -58,15 +59,15 @@ export function Nav() {
           {SITE.nav.map((item) => (
             <li key={item.id}>
               <Magnetic>
-                <a
-                  href={`#${item.id}`}
+                <Link
+                  href={`/#${item.id}`}
                   className="nav-link"
                   aria-current={current === item.id ? 'location' : undefined}
                   data-cursor="hover"
                   onClick={() => setOpen(false)}
                 >
                   {item.label}
-                </a>
+                </Link>
               </Magnetic>
             </li>
           ))}

@@ -4,6 +4,7 @@ import { SITE } from '@/content/site';
 import '@/styles/globals.css';
 import '@/styles/intro.css';
 import '@/styles/sections.css';
+import '@/styles/work.css';
 import { Nav } from '@/components/ui/Nav';
 import { Cursor } from '@/components/ui/Cursor';
 

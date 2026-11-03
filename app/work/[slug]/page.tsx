@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { WORKS } from '@/content/works';
+import { WORKS, getWork } from '@/content/works';
 import { SITE } from '@/content/site';
+import { WorkDetail } from '@/components/work/WorkDetail';
 
 export const dynamicParams = false;
 export function generateStaticParams() {
@@ -13,20 +13,41 @@ type Props = { params: Promise<{ slug: string }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const work = WORKS.find((work) => work.slug === slug);
-  return { title: work?.title, description: work?.description };
+  const found = getWork(slug);
+  if (!found) return {};
+  return {
+    title: found.work.title,
+    description: found.work.summary,
+    alternates: { canonical: `/work/${slug}` },
+    openGraph: {
+      title: found.work.title,
+      description: found.work.summary,
+      images: [found.work.cover],
+    },
+  };
 }
 
 export default async function WorkPage({ params }: Props) {
   const { slug } = await params;
-  const work = WORKS.find((work) => work.slug === slug);
-  if (!work) notFound();
+  const found = getWork(slug);
+  if (!found) notFound();
+  const { work } = found;
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'CreativeWork',
+    name: work.title,
+    description: work.summary,
+    keywords: work.tags.join(', '),
+    url: `${SITE.url}/work/${work.slug}`,
+    image: `${SITE.url}${work.cover}`,
+  };
   return (
-    <main id="main" className="section-shell">
-      <h1>{work.title}</h1>
-      <Link className="button" href="/">
-        {SITE.work.back}
-      </Link>
-    </main>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <WorkDetail {...found} />
+    </>
   );
 }

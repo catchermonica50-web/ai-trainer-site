@@ -1,0 +1,327 @@
+/* Phase 4: work rail, work cards, detail pages. */
+.work-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.work-controls {
+  display: flex;
+  gap: 8px;
+}
+.rail-btn {
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: var(--bg);
+  color: var(--text);
+  font:
+    1rem/1 var(--font-jetbrains),
+    monospace;
+  cursor: pointer;
+  transition: border-color 160ms cubic-bezier(0.2, 0, 0, 1);
+}
+.rail-btn:hover:not(:disabled) {
+  border-color: var(--accent);
+}
+.rail-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+.work-hint {
+  margin: 8px 0 24px;
+  color: var(--text-dim);
+  font:
+    0.75rem/1.7 var(--font-jetbrains),
+    monospace;
+}
+.work-rail {
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+  touch-action: pan-y;
+  user-select: none;
+  outline-offset: 4px;
+  cursor: grab;
+}
+.work-rail::-webkit-scrollbar {
+  display: none;
+}
+.work-rail[data-dragging] {
+  cursor: grabbing;
+}
+.work-list {
+  display: flex;
+  gap: 16px;
+  margin: 0;
+  padding: 8px 0 16px;
+  list-style: none;
+}
+.work-item {
+  flex: 0 0 min(84%, 420px);
+  perspective: 900px;
+}
+.work-card {
+  position: relative;
+  display: block;
+  height: 100%;
+  background: var(--panel);
+  clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 0 100%);
+  color: var(--text);
+  text-decoration: none;
+  transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+  transition:
+    transform 160ms cubic-bezier(0.2, 0, 0, 1),
+    opacity 300ms cubic-bezier(0.16, 1, 0.3, 1);
+  -webkit-user-drag: none;
+}
+.work-card[data-leaving] {
+  opacity: 0;
+  transform: scale(1.04);
+  transition-duration: 300ms;
+}
+.work-cover {
+  position: relative;
+  display: block;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+.work-cover img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+.work-sample,
+.work-detail-title .work-sample {
+  display: inline-block;
+  padding: 2px 8px;
+  border: 1px solid var(--accent);
+  border-radius: 2px;
+  background: var(--bg);
+  color: var(--accent);
+  font:
+    0.75rem/1.7 var(--font-jetbrains),
+    monospace;
+  letter-spacing: 0.1em;
+}
+.work-card .work-sample {
+  position: absolute;
+  top: 12px;
+  right: 24px;
+}
+.work-body {
+  display: grid;
+  gap: 8px;
+  padding: 20px 24px 24px;
+}
+.work-body .hud-index {
+  margin: 0;
+}
+.work-title {
+  font:
+    600 1.25rem/1.5 var(--font-rajdhani),
+    var(--font-noto),
+    sans-serif;
+}
+.work-summary {
+  color: var(--text-dim);
+  font-size: 0.875rem;
+}
+.work-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+@media (hover: hover) and (pointer: fine) {
+  .work-card:hover {
+    box-shadow: 0 0 24px rgb(255 106 43 / 14%);
+  }
+  .work-card:hover .hud-scan {
+    opacity: 1;
+    transform: translateY(260%);
+    transition:
+      transform 900ms cubic-bezier(0.16, 1, 0.3, 1),
+      opacity 160ms;
+  }
+}
+@media (min-width: 768px) {
+  .work-item {
+    flex-basis: calc((100% - 16px) / 2);
+  }
+}
+@media (min-width: 1024px) {
+  .work-list {
+    gap: 24px;
+  }
+  .work-item {
+    flex-basis: calc((100% - 48px) / 2.6);
+  }
+}
+
+/* Detail */
+@keyframes work-enter {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+}
+.work-detail {
+  padding-top: 96px;
+  animation: work-enter 450ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.work-back {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--accent-2);
+  font:
+    0.875rem/1 var(--font-jetbrains),
+    monospace;
+  text-decoration: none;
+}
+.work-detail-title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+.work-detail-title h1 {
+  margin: 0;
+  font:
+    700 2rem/1.5 var(--font-noto),
+    sans-serif;
+}
+.work-detail-summary {
+  color: var(--text-dim);
+}
+.work-meta {
+  display: grid;
+  gap: 12px;
+  margin: 24px 0;
+}
+.work-meta div {
+  display: flex;
+  gap: 16px;
+  align-items: baseline;
+}
+.work-meta dt {
+  min-width: 3em;
+  color: var(--text-dim);
+  font:
+    0.75rem/1.7 var(--font-jetbrains),
+    monospace;
+}
+.work-meta dd {
+  margin: 0;
+}
+.work-detail-cover {
+  margin: 0 0 24px;
+  clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 0 100%);
+}
+.work-detail-cover img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.work-metrics {
+  display: grid;
+  gap: 16px;
+  margin: 0 0 48px;
+  padding: 0;
+  list-style: none;
+}
+.work-metrics li {
+  display: grid;
+  gap: 4px;
+  padding: 16px 24px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+}
+.work-metric-value {
+  color: var(--accent);
+  font:
+    600 1.5rem/1.5 var(--font-jetbrains),
+    monospace;
+}
+.work-metric-label {
+  color: var(--text-dim);
+  font-size: 0.875rem;
+}
+.work-sections {
+  display: grid;
+  gap: 32px;
+  max-width: 72ch;
+}
+.work-section h2 {
+  margin: 0 0 8px;
+  color: var(--accent-2);
+  font:
+    600 1.25rem/1.5 var(--font-noto),
+    sans-serif;
+}
+.work-section p {
+  margin: 0;
+  line-height: 1.7;
+}
+.work-nav {
+  display: grid;
+  gap: 16px;
+  margin-top: 64px;
+  padding-top: 32px;
+  border-top: 1px solid var(--line);
+}
+.work-nav-link {
+  display: grid;
+  gap: 4px;
+  min-height: 44px;
+  padding: 12px 16px;
+  border: 1px solid var(--line);
+  color: var(--text);
+  text-decoration: none;
+}
+a.work-nav-link:hover {
+  border-color: var(--accent);
+}
+.work-nav-link[data-disabled] {
+  opacity: 0.45;
+}
+.work-nav-label {
+  color: var(--text-dim);
+  font:
+    0.75rem/1.7 var(--font-jetbrains),
+    monospace;
+}
+.work-nav-next {
+  text-align: right;
+}
+.work-nav-back {
+  justify-self: center;
+  align-self: center;
+}
+@media (min-width: 768px) {
+  .work-metrics {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .work-nav {
+    grid-template-columns: 1fr auto 1fr;
+    align-items: stretch;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .work-detail {
+    animation-duration: 150ms;
+  }
+  @keyframes work-enter {
+    from {
+      opacity: 0;
+    }
+  }
+  .work-card,
+  .work-card[data-leaving] {
+    transform: none;
+    transition-duration: 150ms;
+  }
+}

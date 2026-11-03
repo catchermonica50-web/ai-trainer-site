@@ -1,0 +1,1 @@
+{"method":"temporarily appended a 5th entry (slug add-test) to content/works.ts only, ran npm run build, then reverted","workHtmlPages":5,"sitemapHasAddTest":1,"homeLinksToAddTest":true,"safetyRedTeamingNextHref":"/work/add-test","afterRevertWorkHtmlPages":4}

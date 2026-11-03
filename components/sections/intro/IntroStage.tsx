@@ -5,6 +5,7 @@ import { preload } from 'react-dom';
 import { SITE } from '@/content/site';
 import { INTRO_MEDIA } from '@/lib/intro/assets';
 import { hasSeenIntro, jumpToAbout, markIntroSeen } from '@/lib/intro/session';
+import { restoreWorkReturn } from '@/lib/workReturn';
 import { useIntroMode } from '@/lib/intro/useIntroMode';
 import { useScrub } from '@/lib/intro/useScrub';
 import { IntroPicture } from './IntroPicture';
@@ -55,6 +56,11 @@ export function IntroStage() {
   const returnToAbout = useCallback(() => {
     if (returnChecked.current) return;
     returnChecked.current = true;
+    // Back from a work page: restore the exact page and rail position, never replay the intro.
+    if (restoreWorkReturn()) return markIntroSeen();
+    const target =
+      window.location.hash && document.getElementById(window.location.hash.slice(1));
+    if (target) return target.scrollIntoView({ behavior: 'instant', block: 'start' });
     if (hasSeenIntro()) jumpToAbout(false);
   }, []);
   useScrub({
