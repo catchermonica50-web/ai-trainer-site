@@ -52,14 +52,11 @@ export function RobotBackdrop({ src = SITE.robot.model }: { src?: string }) {
     const io = new IntersectionObserver(
       ([e]) => {
         if (!e.isIntersecting) return;
-        // The intro's pinned spacer settles after first paint; confirm on a later frame so a
-        // transient early layout cannot trigger the download.
-        requestAnimationFrame(() =>
-          requestAnimationFrame(() => {
-            const r = el.getBoundingClientRect();
-            if (r.top < innerHeight + 200 && r.bottom > -200) setNear(true);
-          }),
-        );
+        // At scrollY 0 the full-height intro fills the viewport, so #about can only look
+        // "near" during the intro's pre-pin layout. Require a real scroll position, and
+        // re-check the rect so a stale entry cannot trigger the download.
+        const r = el.getBoundingClientRect();
+        if (scrollY > 0 && r.top < innerHeight + 200 && r.bottom > -200) setNear(true);
       },
       { rootMargin: '200px 0px' },
     );
